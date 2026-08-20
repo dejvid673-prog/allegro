@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "canonicalSource": "https://developer.allegro.pl/swagger.yaml",
+  "actualSource": "https://developer.allegro.pl/swagger.yaml",
+  "fetchedAt": "2026-08-20T00:00:00+00:00",
+  "sha256": "a8ce81f568d9b97986360cc2a62c6708dbe23686051a6fbcf18244e6eb7cd1c8",
+  "openapi": "3.0.0",
+  "apiTitle": "Allegro REST API",
+  "apiVersion": "latest",
+  "pathCount": 201,
+  "operationCount": 267,
+  "schemaCount": 967,
+  "deprecatedOperationCount": 6,
+  "servers": [
+    {
+      "url": "https://api.{environment}",
+      "variables": {
+        "environment": {
+          "default": "allegro.pl",
+          "enum": [
+            "allegro.pl",
+            "allegro.pl.allegrosandbox.pl"
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rafish.example/schemas/allegro-offer-template.schema.json",
+  "title": "AllegroOfferTemplate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "status", "identity", "catalog", "content", "selling", "logistics", "compliance", "costs", "sources", "approval"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "status": {"enum": ["DRAFT", "BLOCKED", "READY_FOR_APPROVAL", "APPROVED", "PUBLISHED"]},
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["accountId", "marketplaceId", "sku", "sourceOfferId"],
+      "properties": {
+        "accountId": {"type": "string", "minLength": 1},
+        "marketplaceId": {"type": "string", "minLength": 1},
+        "sku": {"type": "string", "minLength": 1},
+        "sourceOfferId": {"type": ["string", "null"]}
+      }
+    },
+    "catalog": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["categoryId", "productId", "gtin", "parameters", "verifiedAt"],
+      "properties": {
+        "categoryId": {"type": ["string", "null"]},
+        "productId": {"type": ["string", "null"]},
+        "gtin": {"type": ["string", "null"]},
+        "parameters": {"type": "array", "items": {"type": "object"}},
+        "verifiedAt": {"type": ["string", "null"], "format": "date-time"}
+      }
+    },
+    "content": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "descriptionSections", "images"],
+      "properties": {
+        "title": {"type": "string", "minLength": 12, "maxLength": 75},
+        "descriptionSections": {"type": "array", "minItems": 1, "items": {"type": "object"}},
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["url", "aiOrigin", "evidenceRef"],
+            "properties": {
+              "url": {"type": "string", "format": "uri"},
+              "aiOrigin": {"enum": ["NO_AI", "AI_CREATED", "AI_MODIFIED", "UNKNOWN"]},
+              "evidenceRef": {"type": ["string", "null"]}
+            }
+          }
+        }
+      }
+    },
+    "selling": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["format", "priceGross", "currency", "stock", "condition"],
+      "properties": {
+        "format": {"enum": ["BUY_NOW", "ADVERTISEMENT"]},
+        "priceGross": {"type": ["number", "null"], "minimum": 0},
+        "currency": {"type": "string", "pattern": "^[A-Z]{3}$"},
+        "stock": {"type": ["integer", "null"], "minimum": 0},
+        "condition": {"type": ["string", "null"]}
+      }
+    },
+    "logistics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shippingRateId", "shippingProfileId", "handlingTime", "returnPolicyId", "warrantyId"],
+      "properties": {
+        "shippingRateId": {"type": ["string", "null"]},
+        "shippingProfileId": {"type": ["string", "null"]},
+        "handlingTime": {"type": ["string", "null"]},
+        "returnPolicyId": {"type": ["string", "null"]},
+        "warrantyId": {"type": ["string", "null"]}
+      }
+    },
+    "compliance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["profile", "gpsrComplete", "hazmatReviewed", "feedLabelReviewed", "liveAnimalReviewed", "blockingFindings"],
+      "properties": {
+        "profile": {"enum": ["GENERAL", "POND_CHEMICAL", "FEED", "LIVE_FISH", "ELECTRONICS", "UNKNOWN"]},
+        "gpsrComplete": {"type": "boolean"},
+        "hazmatReviewed": {"type": "boolean"},
+        "feedLabelReviewed": {"type": "boolean"},
+        "liveAnimalReviewed": {"type": "boolean"},
+        "blockingFindings": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "costs": {"$ref": "cost-model.schema.json"},
+    "sources": {"type": "array", "minItems": 1, "items": {"type": "string"}, "uniqueItems": true},
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "approvedBy", "approvedAt", "proposalHash"],
+      "properties": {
+        "required": {"type": "boolean"},
+        "approvedBy": {"type": ["string", "null"]},
+        "approvedAt": {"type": ["string", "null"], "format": "date-time"},
+        "proposalHash": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

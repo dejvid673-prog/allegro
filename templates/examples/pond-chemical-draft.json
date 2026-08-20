@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "BLOCKED",
+  "identity": {"accountId": "ACCOUNT_PLACEHOLDER", "marketplaceId": "allegro-pl", "sku": "CHEM-EXAMPLE", "sourceOfferId": null},
+  "catalog": {"categoryId": null, "productId": null, "gtin": null, "parameters": [], "verifiedAt": null},
+  "content": {
+    "title": "Preparat do oczka wodnego przykład 1 l",
+    "descriptionSections": [{"type": "TEXT", "content": "Przykład struktury. Treść musi wynikać z etykiety i dokumentacji produktu."}],
+    "images": [{"url": "https://example.invalid/image.jpg", "aiOrigin": "UNKNOWN", "evidenceRef": null}]
+  },
+  "selling": {"format": "BUY_NOW", "priceGross": null, "currency": "PLN", "stock": null, "condition": "NEW"},
+  "logistics": {"shippingRateId": null, "shippingProfileId": null, "handlingTime": null, "returnPolicyId": null, "warrantyId": null},
+  "compliance": {"profile": "POND_CHEMICAL", "gpsrComplete": false, "hazmatReviewed": false, "feedLabelReviewed": true, "liveAnimalReviewed": true, "blockingFindings": ["CLP/SDS not verified", "AI image origin unknown"]},
+  "costs": {
+    "currency": "PLN", "taxBasis": "NET", "complete": false,
+    "purchaseNet": {"value": null, "status": "UNKNOWN", "sourceRef": null, "effectiveAt": null},
+    "inboundFreightNet": {"value": null, "status": "UNKNOWN", "sourceRef": null, "effectiveAt": null},
+    "packagingMaterialsNet": {"value": null, "status": "UNKNOWN", "sourceRef": null, "effectiveAt": null},
+    "packagingLaborNet": {"value": null, "status": "UNKNOWN", "sourceRef": null, "effectiveAt": null},
+    "paymentFeesNet": {"value": null, "status": "UNKNOWN", "sourceRef": null, "effectiveAt": null},
+    "allegroBaseCommissionNet": {"value": null, "status": "UNKNOWN", "sourceRef": null, "effectiveAt": null},
+    "allegroFixedFeesNet": {"value": null, "status": "UNKNOWN", "sourceRef": null, "effectiveAt": null},
+    "smartContributionNet": {"value": null, "status": "UNKNOWN", "sourceRef": null, "effectiveAt": null},
+    "carrierBaseNet": {"value": null, "status": "UNKNOWN", "sourceRef": null, "effectiveAt": null},
+    "carrierSurchargesNet": {"value": null, "status": "UNKNOWN", "sourceRef": null, "effectiveAt": null},
+    "codFeeNet": {"value": null, "status": "UNKNOWN", "sourceRef": null, "effectiveAt": null},
+    "promotionFixedNet": {"value": null, "status": "UNKNOWN", "sourceRef": null, "effectiveAt": null},
+    "promotionCommissionNet": {"value": null, "status": "UNKNOWN", "sourceRef": null, "effectiveAt": null},
+    "adsAttributedNet": {"value": null, "status": "UNKNOWN", "sourceRef": null, "effectiveAt": null},
+    "returnsReserveNet": {"value": null, "status": "UNKNOWN", "sourceRef": null, "effectiveAt": null},
+    "damageReserveNet": {"value": null, "status": "UNKNOWN", "sourceRef": null, "effectiveAt": null},
+    "otherNet": {"value": null, "status": "UNKNOWN", "sourceRef": null, "effectiveAt": null},
+    "salesPriceGross": null, "salesRevenueNet": null, "totalVariableCostNet": null, "contributionMarginNet": null, "contributionMarginPct": null, "minimumContributionMarginNet": 0,
+    "calculatedAt": "2026-08-20T00:00:00Z", "sourceRefs": ["example-only"], "notes": ["DRAFT: unknown costs block publication"]
+  },
+  "sources": ["example-only"],
+  "approval": {"required": true, "approvedBy": null, "approvedAt": null, "proposalHash": null}
+}

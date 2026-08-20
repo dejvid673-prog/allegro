@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rafish.example/schemas/allegro-shipping-profile.schema.json",
+  "title": "ShippingProfile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["profileId", "sku", "verified", "packedWeightGrams", "dimensionsMm", "traits", "maxPiecesPerParcel", "allowedServiceIds", "blockedServiceIds", "verifiedAt", "evidenceRefs"],
+  "properties": {
+    "profileId": {"type": "string", "minLength": 1},
+    "sku": {"type": "string", "minLength": 1},
+    "verified": {"type": "boolean"},
+    "packedWeightGrams": {"type": ["integer", "null"], "minimum": 1},
+    "dimensionsMm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["length", "width", "height"],
+      "properties": {
+        "length": {"type": ["integer", "null"], "minimum": 1},
+        "width": {"type": ["integer", "null"], "minimum": 1},
+        "height": {"type": ["integer", "null"], "minimum": 1}
+      }
+    },
+    "traits": {
+      "type": "array",
+      "items": {"enum": ["DRY", "POWDER", "LIQUID", "FRAGILE", "HIGH_VALUE", "BATTERY", "CLP", "TEMPERATURE", "LIVE_ANIMAL", "LONG", "PALLET"]},
+      "uniqueItems": true
+    },
+    "maxPiecesPerParcel": {"type": ["integer", "null"], "minimum": 1},
+    "allowedServiceIds": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "blockedServiceIds": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "verifiedAt": {"type": ["string", "null"], "format": "date-time"},
+    "evidenceRefs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "packagingInstructionRef": {"type": ["string", "null"]}
+  }
+}

@@ -1,0 +1,5411 @@
+[
+  {
+    "method": "GET",
+    "path": "/sale/offer-additional-services/categories",
+    "operationId": "getListOfAdditionalServicesDefinitionsCategoriesUsingGET",
+    "summary": "Get the additional services definitions by categories",
+    "tags": [
+      "Additional services"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offer-additional-services/groups",
+    "operationId": "getListOfAdditionalServicesGroupsUsingGET",
+    "summary": "Get the user's additional services groups",
+    "tags": [
+      "Additional services"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "POST",
+    "path": "/sale/offer-additional-services/groups",
+    "operationId": "createAdditionalServicesGroupUsingPOST",
+    "summary": "Create additional services group",
+    "tags": [
+      "Additional services"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "201",
+      "401",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offer-additional-services/groups/{groupId}",
+    "operationId": "getAdditionalServicesGroupUsingGET",
+    "summary": "Get the details of an additional services group",
+    "tags": [
+      "Additional services"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/offer-additional-services/groups/{groupId}",
+    "operationId": "modifyAdditionalServicesGroupUsingPUT",
+    "summary": "Modify an additional services group",
+    "tags": [
+      "Additional services"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offer-additional-services/groups/{groupId}/translations",
+    "operationId": "getAdditionalServiceGroupTranslations",
+    "summary": "Get translations for specified group",
+    "tags": [
+      "Additional services translations"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "DELETE",
+    "path": "/sale/offer-additional-services/groups/{groupId}/translations/{language}",
+    "operationId": "deleteAdditionalServiceGroupTranslation",
+    "summary": "Delete a translation for a specified group and language",
+    "tags": [
+      "Additional services translations"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "204",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "PATCH",
+    "path": "/sale/offer-additional-services/groups/{groupId}/translations/{language}",
+    "operationId": "updateAdditionalServiceGroupTranslation",
+    "summary": "Create/Update translations for specified group and language",
+    "tags": [
+      "Additional services translations"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "GET",
+    "path": "/fulfillment/advance-ship-notices",
+    "operationId": "getAdvanceShipNotices",
+    "summary": "Get list of Advance Ship Notices",
+    "tags": [
+      "Advance Ship Notices"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:fulfillment:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 4
+  },
+  {
+    "method": "POST",
+    "path": "/fulfillment/advance-ship-notices",
+    "operationId": "createAdvanceShipNotice",
+    "summary": "Create an Advance Ship Notice",
+    "tags": [
+      "Advance Ship Notices"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:fulfillment:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "DELETE",
+    "path": "/fulfillment/advance-ship-notices/{id}",
+    "operationId": "deleteAdvanceShipNotice",
+    "summary": "Delete Advance Ship Notice",
+    "tags": [
+      "Advance Ship Notices"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:fulfillment:write"
+    ],
+    "responseCodes": [
+      "204",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/fulfillment/advance-ship-notices/{id}",
+    "operationId": "getAdvanceShipNotice",
+    "summary": "Get single Advance Ship Notice",
+    "tags": [
+      "Advance Ship Notices"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:fulfillment:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/fulfillment/advance-ship-notices/{id}",
+    "operationId": "updateAdvanceShipNotice",
+    "summary": "Update Advance Ship Notice",
+    "tags": [
+      "Advance Ship Notices"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:fulfillment:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "412",
+      "422"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "PUT",
+    "path": "/fulfillment/advance-ship-notices/{id}/cancel",
+    "operationId": "cancelAdvanceShipNotice",
+    "summary": "Cancel Advance Ship Notice",
+    "tags": [
+      "Advance Ship Notices"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:fulfillment:write"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/fulfillment/advance-ship-notices/{id}/labels",
+    "operationId": "getAdvanceShipNoticeLabels",
+    "summary": "Get labels for Advance Ship Notice",
+    "tags": [
+      "Advance Ship Notices"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:fulfillment:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "GET",
+    "path": "/fulfillment/advance-ship-notices/{id}/receiving-state",
+    "operationId": "getAdvanceShipNoticeReceivingState",
+    "summary": "Check current state and details of Advance Ship Notice receiving",
+    "tags": [
+      "Advance Ship Notices"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:fulfillment:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/fulfillment/advance-ship-notices/{id}/submitted",
+    "operationId": "updateSubmittedAdvanceShipNotice",
+    "summary": "Update submitted Advance Ship Notice",
+    "tags": [
+      "Advance Ship Notices"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:fulfillment:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "412",
+      "422"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "GET",
+    "path": "/fulfillment/submit-commands/{command-id}",
+    "operationId": "getSubmitCommand",
+    "summary": "Get submit status",
+    "tags": [
+      "Advance Ship Notices"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:fulfillment:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/fulfillment/submit-commands/{command-id}",
+    "operationId": "submitCommand",
+    "summary": "Submit the Advance Ship Notice",
+    "tags": [
+      "Advance Ship Notices"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:fulfillment:write"
+    ],
+    "responseCodes": [
+      "201",
+      "401",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "POST",
+    "path": "/after-sales-service-conditions/attachments",
+    "operationId": "createAfterSalesServiceConditionsAttachmentUsingPOST",
+    "summary": "Create a warranty attachment metadata",
+    "tags": [
+      "After sale services"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "403",
+      "415",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "PUT",
+    "path": "/after-sales-service-conditions/attachments/{attachmentId}",
+    "operationId": "uploadAfterSalesServiceConditionsAttachmentUsingPUT",
+    "summary": "Upload an warranty attachment",
+    "tags": [
+      "After sale services"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "413",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/after-sales-service-conditions/implied-warranties",
+    "operationId": "getPublicSellerListingUsingGET",
+    "summary": "Get the user's implied warranties",
+    "tags": [
+      "After sale services"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "POST",
+    "path": "/after-sales-service-conditions/implied-warranties",
+    "operationId": "createAfterSalesServiceImpliedWarrantyUsingPOST",
+    "summary": "Create new user's implied warranty",
+    "tags": [
+      "After sale services"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/after-sales-service-conditions/implied-warranties/{impliedWarrantyId}",
+    "operationId": "getAfterSalesServiceImpliedWarrantyUsingGET",
+    "summary": "Get the user's implied warranty",
+    "tags": [
+      "After sale services"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/after-sales-service-conditions/implied-warranties/{impliedWarrantyId}",
+    "operationId": "updateAfterSalesServiceImpliedWarrantyUsingPUT",
+    "summary": "Change the user's implied warranty",
+    "tags": [
+      "After sale services"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/after-sales-service-conditions/return-policies",
+    "operationId": "getPublicSellerListingUsingGET_1",
+    "summary": "Get the user's return policies",
+    "tags": [
+      "After sale services"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "POST",
+    "path": "/after-sales-service-conditions/return-policies",
+    "operationId": "createAfterSalesServiceReturnPolicyUsingPOST",
+    "summary": "Create new user's return policy",
+    "tags": [
+      "After sale services"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "DELETE",
+    "path": "/after-sales-service-conditions/return-policies/{returnPolicyId}",
+    "operationId": "deleteAfterSalesServiceReturnPolicyUsingDELETE",
+    "summary": "Delete the user's return policy",
+    "tags": [
+      "After sale services"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "200",
+      "204",
+      "400",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/after-sales-service-conditions/return-policies/{returnPolicyId}",
+    "operationId": "getAfterSalesServiceReturnPolicyUsingGET",
+    "summary": "Get the user's return policy",
+    "tags": [
+      "After sale services"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/after-sales-service-conditions/return-policies/{returnPolicyId}",
+    "operationId": "updateAfterSalesServiceReturnPolicyUsingPUT",
+    "summary": "Change the user's return policy",
+    "tags": [
+      "After sale services"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/after-sales-service-conditions/warranties",
+    "operationId": "getPublicSellerListingUsingGET_2",
+    "summary": "Get the user's warranties",
+    "tags": [
+      "After sale services"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "POST",
+    "path": "/after-sales-service-conditions/warranties",
+    "operationId": "createAfterSalesServiceWarrantyUsingPOST",
+    "summary": "Create new user's warranty",
+    "tags": [
+      "After sale services"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/after-sales-service-conditions/warranties/{warrantyId}",
+    "operationId": "getAfterSalesServiceWarrantyUsingGET",
+    "summary": "Get the user's warranty",
+    "tags": [
+      "After sale services"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/after-sales-service-conditions/warranties/{warrantyId}",
+    "operationId": "updateAfterSalesServiceWarrantyUsingPUT",
+    "summary": "Change the user's warranty",
+    "tags": [
+      "After sale services"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/alle-discount/campaigns",
+    "operationId": "getAlleDiscountCampaigns",
+    "summary": "List AlleDiscount campaigns",
+    "tags": [
+      "AlleDiscount"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:campaigns"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "POST",
+    "path": "/sale/alle-discount/submit-offer-commands",
+    "operationId": "submitOfferToAlleDiscountCommands",
+    "summary": "Create submit offer command",
+    "tags": [
+      "AlleDiscount"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:campaigns"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "409"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/alle-discount/submit-offer-commands/{commandId}",
+    "operationId": "getSubmitOfferToAlleDiscountCommandsStatus",
+    "summary": "Get the offer submission command status",
+    "tags": [
+      "AlleDiscount"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:campaigns"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "POST",
+    "path": "/sale/alle-discount/withdraw-offer-commands",
+    "operationId": "withdrawOfferFromAlleDiscountCommands",
+    "summary": "Create withdraw offer command",
+    "tags": [
+      "AlleDiscount"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:campaigns"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "409"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/alle-discount/withdraw-offer-commands/{commandId}",
+    "operationId": "getWithdrawOfferFromAlleDiscountCommandsStatus",
+    "summary": "Get the offer withdrawal command status",
+    "tags": [
+      "AlleDiscount"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:campaigns"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/alle-discount/{campaignId}/eligible-offers",
+    "operationId": "getOffersEligibleForAlleDiscount",
+    "summary": "List eligible offers",
+    "tags": [
+      "AlleDiscount"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:campaigns"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 6
+  },
+  {
+    "method": "GET",
+    "path": "/sale/alle-discount/{campaignId}/submitted-offers",
+    "operationId": "getOffersSubmittedToAlleDiscount",
+    "summary": "List offer participations",
+    "tags": [
+      "AlleDiscount"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:campaigns"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 6
+  },
+  {
+    "method": "GET",
+    "path": "/sale/allegro-prices/accounts/participations",
+    "operationId": "getAccountParticipation",
+    "summary": "Get account participation status",
+    "tags": [
+      "Allegro Prices"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:campaigns"
+    ],
+    "responseCodes": [
+      "200",
+      "401"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "PATCH",
+    "path": "/sale/allegro-prices/accounts/participations",
+    "operationId": "updateAccountParticipation",
+    "summary": "Update account participation",
+    "tags": [
+      "Allegro Prices"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:campaigns"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "POST",
+    "path": "/sale/allegro-prices/offers-queries",
+    "operationId": "getAllegroPricesOffers",
+    "summary": "Query Allegro Prices offers status",
+    "tags": [
+      "Allegro Prices"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:campaigns"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "POST",
+    "path": "/sale/allegro-prices/offers/exclusion-commands",
+    "operationId": "excludeOfferCommands",
+    "summary": "Exclude offers command",
+    "tags": [
+      "Allegro Prices"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:campaigns"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "409",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/allegro-prices/offers/exclusion-commands/{commandId}",
+    "operationId": "getExcludeOfferCommandStatus",
+    "summary": "Get exclude offer command status",
+    "tags": [
+      "Allegro Prices"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:campaigns"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "POST",
+    "path": "/sale/allegro-prices/offers/submit-offer-commands",
+    "operationId": "submitOfferCommands",
+    "summary": "Submit offers command",
+    "tags": [
+      "Allegro Prices"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:campaigns"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "409",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/allegro-prices/offers/submit-offer-commands/{commandId}",
+    "operationId": "getSubmitOfferCommandStatus",
+    "summary": "Get submit offer command status",
+    "tags": [
+      "Allegro Prices"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:campaigns"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/bidding/offers/{offerId}/bid",
+    "operationId": "getBid",
+    "summary": "Get current user's bid information",
+    "tags": [
+      "Auctions and Bidding"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:bids"
+    ],
+    "responseCodes": [
+      "200",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/bidding/offers/{offerId}/bid",
+    "operationId": "placeBid",
+    "summary": "Place a bid in an auction",
+    "tags": [
+      "Auctions and Bidding"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:bids"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "404",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/price-automation/offers/{offerId}/rules",
+    "operationId": "getAutomaticPricingRulesForOfferUsingGET",
+    "summary": "Get automatic pricing rules assigned to the offer",
+    "tags": [
+      "Automatic pricing"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/price-automation/rules",
+    "operationId": "getAutomaticPricingRulesUsingGET",
+    "summary": "Get automatic pricing rules",
+    "tags": [
+      "Automatic pricing"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "POST",
+    "path": "/sale/price-automation/rules",
+    "operationId": "createAutomaticPricingRulesUsingPost",
+    "summary": "Post automatic pricing rule",
+    "tags": [
+      "Automatic pricing"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "403",
+      "404",
+      "409"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "DELETE",
+    "path": "/sale/price-automation/rules/{ruleId}",
+    "operationId": "deleteAutomaticPricingRuleUsingDelete",
+    "summary": "Delete automatic pricing rule",
+    "tags": [
+      "Automatic pricing"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "204",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/price-automation/rules/{ruleId}",
+    "operationId": "getAutomaticPricingRuleByIdUsingGET",
+    "summary": "Get automatic pricing rule by id",
+    "tags": [
+      "Automatic pricing"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/price-automation/rules/{ruleId}",
+    "operationId": "updateAutomaticPricingRuleUsingPut",
+    "summary": "Edit automatic pricing rule",
+    "tags": [
+      "Automatic pricing"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "409"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/badge-applications",
+    "operationId": "badgeApplications_get_all",
+    "summary": "Get a list of badge applications",
+    "tags": [
+      "Badge campaigns"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:campaigns"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403"
+    ],
+    "parameterCount": 5
+  },
+  {
+    "method": "GET",
+    "path": "/sale/badge-applications/{applicationId}",
+    "operationId": "badgeApplications_get_one",
+    "summary": "Get a badge application details",
+    "tags": [
+      "Badge campaigns"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:campaigns"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/badge-campaigns",
+    "operationId": "badgeCampaigns_get_all",
+    "summary": "Get a list of available badge campaigns",
+    "tags": [
+      "Badge campaigns"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:campaigns"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/badge-operations/{operationId}",
+    "operationId": "badgeOperations_get_one",
+    "summary": "Get badge operation details",
+    "tags": [
+      "Badge campaigns"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:campaigns"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/badges",
+    "operationId": "getBadges",
+    "summary": "Get a list of badges",
+    "tags": [
+      "Badge campaigns"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:campaigns"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403"
+    ],
+    "parameterCount": 5
+  },
+  {
+    "method": "POST",
+    "path": "/sale/badges",
+    "operationId": "postBadges",
+    "summary": "Apply for badge in selected offer",
+    "tags": [
+      "Badge campaigns"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:campaigns"
+    ],
+    "responseCodes": [
+      "202",
+      "400",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "PATCH",
+    "path": "/sale/badges/offers/{offerId}/campaigns/{campaignId}",
+    "operationId": "patchBadge",
+    "summary": "Update campaign badge for the given offer",
+    "tags": [
+      "Badge campaigns"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:campaigns"
+    ],
+    "responseCodes": [
+      "202",
+      "400",
+      "401",
+      "403",
+      "404",
+      "409",
+      "422"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "POST",
+    "path": "/sale/offer-bulk-modification-commands",
+    "operationId": "batchOfferModificationUsingPOST",
+    "summary": "Batch offer price and stock modification (beta)",
+    "tags": [
+      "Batch offer modification"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "409",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offer-bulk-modification-commands/{commandId}",
+    "operationId": "batchOfferModificationCommandStatusUsingGET",
+    "summary": "Batch price and stock command summary (beta)",
+    "tags": [
+      "Batch offer modification"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offer-bulk-modification-commands/{commandId}/tasks",
+    "operationId": "batchOfferModificationCommandTaskStatusesUsingGET",
+    "summary": "Batch price and stock command detailed report (beta)",
+    "tags": [
+      "Batch offer modification"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404",
+      "422"
+    ],
+    "parameterCount": 4
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offer-modification-commands/{commandId}",
+    "operationId": "getGeneralReportUsingGET",
+    "summary": "Modification command summary",
+    "tags": [
+      "Batch offer modification"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/offer-modification-commands/{commandId}",
+    "operationId": "modificationCommandUsingPUT",
+    "summary": "Batch offer modification",
+    "tags": [
+      "Batch offer modification"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "403",
+      "404",
+      "409",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offer-modification-commands/{commandId}/tasks",
+    "operationId": "getTasksUsingGET",
+    "summary": "Modification command detailed report",
+    "tags": [
+      "Batch offer modification"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 4
+  },
+  {
+    "method": "POST",
+    "path": "/sale/offer-price-automation-commands",
+    "operationId": "offerAutomaticPricingModificationCommandUsingPOST",
+    "summary": "Batch offer automatic pricing rules modification",
+    "tags": [
+      "Batch offer modification"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "403",
+      "409",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offer-price-automation-commands/{commandId}",
+    "operationId": "getofferAutomaticPricingModificationCommandStatusUsingGET",
+    "summary": "Automatic pricing command summary",
+    "tags": [
+      "Batch offer modification"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offer-price-automation-commands/{commandId}/tasks",
+    "operationId": "getofferAutomaticPricingModificationCommandTasksStatusesUsingGET",
+    "summary": "Automatic pricing command detailed report",
+    "tags": [
+      "Batch offer modification"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 4
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offer-price-change-commands/{commandId}",
+    "operationId": "getPriceModificationCommandStatusUsingGET",
+    "summary": "Change price command summary",
+    "tags": [
+      "Batch offer modification"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/offer-price-change-commands/{commandId}",
+    "operationId": "priceModificationCommandUsingPUT",
+    "summary": "Batch offer price modification",
+    "tags": [
+      "Batch offer modification"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "409",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offer-price-change-commands/{commandId}/tasks",
+    "operationId": "getPriceModificationCommandTasksStatusesUsingGET",
+    "summary": "Change price command detailed report",
+    "tags": [
+      "Batch offer modification"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404",
+      "422"
+    ],
+    "parameterCount": 4
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offer-quantity-change-commands/{commandId}",
+    "operationId": "getQuantityModificationCommandStatusUsingGET",
+    "summary": "Change quantity command summary",
+    "tags": [
+      "Batch offer modification"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/offer-quantity-change-commands/{commandId}",
+    "operationId": "quantityModificationCommandUsingPUT",
+    "summary": "Batch offer quantity modification",
+    "tags": [
+      "Batch offer modification"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "409",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offer-quantity-change-commands/{commandId}/tasks",
+    "operationId": "getQuantityModificationCommandTasksStatusesUsingGET",
+    "summary": "Change quantity command detailed report",
+    "tags": [
+      "Batch offer modification"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404",
+      "422"
+    ],
+    "parameterCount": 4
+  },
+  {
+    "method": "GET",
+    "path": "/billing/billing-entries",
+    "operationId": "getBillingEntries",
+    "summary": "Get a list of billing entries",
+    "tags": [
+      "Billing"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:billing:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "406",
+      "422"
+    ],
+    "parameterCount": 9
+  },
+  {
+    "method": "GET",
+    "path": "/billing/billing-types",
+    "operationId": "getBillingTypes",
+    "summary": "Get a list of billing types",
+    "tags": [
+      "Billing"
+    ],
+    "deprecated": false,
+    "scopes": [],
+    "responseCodes": [
+      "200",
+      "401"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/categories",
+    "operationId": "getCategoriesUsingGET",
+    "summary": "Get IDs of Allegro categories",
+    "tags": [
+      "Categories and parameters"
+    ],
+    "deprecated": false,
+    "scopes": [],
+    "responseCodes": [
+      "200",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/categories/{categoryId}",
+    "operationId": "getCategoryUsingGET_1",
+    "summary": "Get a category by ID",
+    "tags": [
+      "Categories and parameters"
+    ],
+    "deprecated": false,
+    "scopes": [],
+    "responseCodes": [
+      "200",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/categories/{categoryId}/parameters",
+    "operationId": "getFlatParametersUsingGET_2",
+    "summary": "Get parameters supported by a category",
+    "tags": [
+      "Categories and parameters"
+    ],
+    "deprecated": false,
+    "scopes": [],
+    "responseCodes": [
+      "200",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/category-events",
+    "operationId": "getCategoryEventsUsingGET_1",
+    "summary": "Get changes in categories",
+    "tags": [
+      "Categories and parameters"
+    ],
+    "deprecated": false,
+    "scopes": [],
+    "responseCodes": [
+      "200",
+      "400",
+      "401"
+    ],
+    "parameterCount": 4
+  },
+  {
+    "method": "GET",
+    "path": "/sale/category-parameters-scheduled-changes",
+    "operationId": "getCategoryParametersScheduledChangesUsingGET_1",
+    "summary": "Get planned changes in category parameters",
+    "tags": [
+      "Categories and parameters"
+    ],
+    "deprecated": false,
+    "scopes": [],
+    "responseCodes": [
+      "200",
+      "400",
+      "401"
+    ],
+    "parameterCount": 8
+  },
+  {
+    "method": "GET",
+    "path": "/sale/matching-categories",
+    "operationId": "categorySuggestionUsingGET",
+    "summary": "Get categories suggestions",
+    "tags": [
+      "Categories and parameters"
+    ],
+    "deprecated": false,
+    "scopes": [],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "406",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/charity/fundraising-campaigns",
+    "operationId": "searchFundraisingCampaigns",
+    "summary": "Search fundraising campaigns",
+    "tags": [
+      "Charity"
+    ],
+    "deprecated": false,
+    "scopes": [],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "GET",
+    "path": "/sale/classified-offers-stats",
+    "operationId": "classifiedOffersStatsGET",
+    "summary": "Get the advertisements daily statistics",
+    "tags": [
+      "Classifieds"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 4
+  },
+  {
+    "method": "GET",
+    "path": "/sale/classified-seller-stats",
+    "operationId": "classifiedSellerOfferStatsGET",
+    "summary": "Get the seller's advertisements daily statistics",
+    "tags": [
+      "Classifieds"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "GET",
+    "path": "/sale/classifieds-packages",
+    "operationId": "getClassifiedPackageConfigurationsForCategoryUsingGET",
+    "summary": "Get configurations of packages",
+    "tags": [
+      "Classifieds"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/classifieds-packages/{packageId}",
+    "operationId": "getClassifiedPackageConfigurationUsingGET",
+    "summary": "Get the configuration of a package",
+    "tags": [
+      "Classifieds"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offer-classifieds-packages/{offerId}",
+    "operationId": "getClassifiedPackagesUsingGET",
+    "summary": "Get classified packages assigned to an offer",
+    "tags": [
+      "Classifieds"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/offer-classifieds-packages/{offerId}",
+    "operationId": "assignClassifiedPackagesUsingPUT",
+    "summary": "Assign packages to a classified",
+    "tags": [
+      "Classifieds"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/order/refund-claims",
+    "operationId": "getRefundApplications",
+    "summary": "Get a list of refund applications",
+    "tags": [
+      "Commission refunds"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:orders:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "406",
+      "422"
+    ],
+    "parameterCount": 6
+  },
+  {
+    "method": "POST",
+    "path": "/order/refund-claims",
+    "operationId": "createRefundApplication",
+    "summary": "Create a refund application",
+    "tags": [
+      "Commission refunds"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:orders:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "403",
+      "406",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "DELETE",
+    "path": "/order/refund-claims/{claimId}",
+    "operationId": "cancelRefundApplication",
+    "summary": "Cancel a refund application",
+    "tags": [
+      "Commission refunds"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:orders:write"
+    ],
+    "responseCodes": [
+      "204",
+      "400",
+      "401",
+      "403",
+      "404",
+      "406",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/order/refund-claims/{claimId}",
+    "operationId": "getRefundApplication",
+    "summary": "Get a refund application details",
+    "tags": [
+      "Commission refunds"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:orders:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "406",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/compatibility-list-suggestions",
+    "operationId": "getCompatibilityListSuggestion",
+    "summary": "Get suggested compatibility list.",
+    "tags": [
+      "Compatibility List"
+    ],
+    "deprecated": false,
+    "scopes": [],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "404"
+    ],
+    "parameterCount": 4
+  },
+  {
+    "method": "GET",
+    "path": "/sale/compatibility-list/supported-categories",
+    "operationId": "getCategoriesThatSupportCompatibilityList",
+    "summary": "Get list of categories where compatibility list is supported",
+    "tags": [
+      "Compatibility List"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/compatible-products",
+    "operationId": "getCompatibleProducts",
+    "summary": "Get list of compatible products",
+    "tags": [
+      "Compatibility List"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "304",
+      "400",
+      "401",
+      "422"
+    ],
+    "parameterCount": 9
+  },
+  {
+    "method": "GET",
+    "path": "/sale/compatible-products/groups",
+    "operationId": "getCompatibleProductsGroups",
+    "summary": "Get list of compatible product groups",
+    "tags": [
+      "Compatibility List"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "304",
+      "400",
+      "401",
+      "422"
+    ],
+    "parameterCount": 5
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offer-contacts",
+    "operationId": "getListOfContactsUsingGET",
+    "summary": "Get the user's contacts",
+    "tags": [
+      "Contacts"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "POST",
+    "path": "/sale/offer-contacts",
+    "operationId": "createContactUsingPOST",
+    "summary": "Create a new contact",
+    "tags": [
+      "Contacts"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offer-contacts/{id}",
+    "operationId": "getContactUsingGET",
+    "summary": "Get contact details",
+    "tags": [
+      "Contacts"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/offer-contacts/{id}",
+    "operationId": "modifyContactUsingPUT",
+    "summary": "Modify contact details",
+    "tags": [
+      "Contacts"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/affiliate/conversions/cps",
+    "operationId": "getCpsConversions",
+    "summary": "[BETA] List CPS conversions",
+    "tags": [
+      "Conversions"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:affiliate:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 9
+  },
+  {
+    "method": "GET",
+    "path": "/order/customer-returns",
+    "operationId": "getCustomerReturns",
+    "summary": "[BETA] Get customer returns by provided query parameters",
+    "tags": [
+      "Customer returns"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:orders:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "406"
+    ],
+    "parameterCount": 20
+  },
+  {
+    "method": "GET",
+    "path": "/order/customer-returns/{customerReturnId}",
+    "operationId": "getCustomerReturnById",
+    "summary": "[BETA] Get customer return by id",
+    "tags": [
+      "Customer returns"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:orders:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "406"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "POST",
+    "path": "/order/customer-returns/{customerReturnId}/rejection",
+    "operationId": "rejectCustomerReturnRefund",
+    "summary": "[BETA] Reject customer return refund",
+    "tags": [
+      "Customer returns"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:orders:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "406",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/delivery-methods",
+    "operationId": "getListOfDeliveryMethodsUsingGET",
+    "summary": "Get the list of delivery methods",
+    "tags": [
+      "Delivery"
+    ],
+    "deprecated": false,
+    "scopes": [],
+    "responseCodes": [
+      "200",
+      "401"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/delivery-settings",
+    "operationId": "getSaleDeliverySettings",
+    "summary": "Get the user's delivery settings",
+    "tags": [
+      "Delivery"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/delivery-settings",
+    "operationId": "putSaleDeliverySettings",
+    "summary": "Modify the user's delivery settings",
+    "tags": [
+      "Delivery"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/shipping-rates",
+    "operationId": "getListOfShippingRatestUsingGET",
+    "summary": "Get the user's shipping rates",
+    "tags": [
+      "Delivery"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "POST",
+    "path": "/sale/shipping-rates",
+    "operationId": "createShippingRatesSetUsingPOST",
+    "summary": "Create a new shipping rates set",
+    "tags": [
+      "Delivery"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/shipping-rates/{id}",
+    "operationId": "getShippingRatesSetUsingGET",
+    "summary": "Get the details of a shipping rates set",
+    "tags": [
+      "Delivery"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/shipping-rates/{id}",
+    "operationId": "modifyShippingRatesSetUsingPUT",
+    "summary": "Edit a user's shipping rates set",
+    "tags": [
+      "Delivery"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/deposit/types",
+    "operationId": "getDepositTypes",
+    "summary": "Get deposit types",
+    "tags": [
+      "Deposits"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/flexible-bundles",
+    "operationId": "listSellersFlexibleBundlesUsingGET",
+    "summary": "List seller's flexible bundles",
+    "tags": [
+      "Flexible bundles"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "POST",
+    "path": "/sale/flexible-bundles",
+    "operationId": "createFlexibleBundleUsingPOST",
+    "summary": "Create new flexible bundle",
+    "tags": [
+      "Flexible bundles"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 0
+  },
+  {
+    "method": "DELETE",
+    "path": "/sale/flexible-bundles/{bundleId}",
+    "operationId": "deleteFlexibleBundleUsingDELETE",
+    "summary": "Delete flexible bundle by ID",
+    "tags": [
+      "Flexible bundles"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "204",
+      "401",
+      "404"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/flexible-bundles/{bundleId}",
+    "operationId": "getFlexibleBundleUsingGET",
+    "summary": "Get flexible bundle by ID",
+    "tags": [
+      "Flexible bundles"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/flexible-bundles/{bundleId}",
+    "operationId": "updateFlexibleBundleUsingPUT",
+    "summary": "Updates flexible bundle",
+    "tags": [
+      "Flexible bundles"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/fulfillment/orders/{orderId}/parcels",
+    "operationId": "getFulfillmentOrderParcels",
+    "summary": "Get list of shipped parcels",
+    "tags": [
+      "Fulfillment Parcels"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:fulfillment:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/fulfillment/available-products",
+    "operationId": "getAvailableProducts",
+    "summary": "Get list of available products",
+    "tags": [
+      "Fulfillment Products"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:fulfillment:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "GET",
+    "path": "/fulfillment/removal/preferences",
+    "operationId": "getFulfillmentRemovalPreferences",
+    "summary": "Get current active removal preference",
+    "tags": [
+      "Fulfillment Removal"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:fulfillment:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "PUT",
+    "path": "/fulfillment/removal/preferences",
+    "operationId": "createFulfillmentRemovalPreferences",
+    "summary": "Create new active Fulfillment Removal Preference",
+    "tags": [
+      "Fulfillment Removal"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:fulfillment:write"
+    ],
+    "responseCodes": [
+      "201",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/fulfillment/returns/refund-dispositions",
+    "operationId": "getRefundDispositionsReport",
+    "summary": "Get refund dispositions report",
+    "tags": [
+      "Fulfillment Returns"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:fulfillment:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "406",
+      "422"
+    ],
+    "parameterCount": 5
+  },
+  {
+    "method": "GET",
+    "path": "/fulfillment/stock",
+    "operationId": "getFulfillmentStock",
+    "summary": "Get available stock",
+    "tags": [
+      "Fulfillment Stock"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:fulfillment:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 11
+  },
+  {
+    "method": "POST",
+    "path": "/sale/images",
+    "operationId": "uploadOfferImageUsingPOST",
+    "summary": "Upload an offer image",
+    "tags": [
+      "Images and attachments"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "403",
+      "413",
+      "415",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "POST",
+    "path": "/sale/offer-attachments",
+    "operationId": "createOfferAttachmentUsingPOST",
+    "summary": "Create an offer attachment",
+    "tags": [
+      "Images and attachments"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "415",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offer-attachments/{attachmentId}",
+    "operationId": "getOfferAttachment",
+    "summary": "Get offer attachment details",
+    "tags": [
+      "Images and attachments"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/offer-attachments/{attachmentId}",
+    "operationId": "uploadOfferAttachmentUsingPUT",
+    "summary": "Upload an offer attachment",
+    "tags": [
+      "Images and attachments"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "415"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/marketplaces",
+    "operationId": "marketplacesGET",
+    "summary": "Get details for all marketplaces in allegro",
+    "tags": [
+      "Information about marketplaces"
+    ],
+    "deprecated": false,
+    "scopes": [],
+    "responseCodes": [
+      "200"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/account/additional-emails",
+    "operationId": "getListOfAdditionalEmailsUsingGET",
+    "summary": "Get user's additional emails",
+    "tags": [
+      "Information about user"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:profile:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "POST",
+    "path": "/account/additional-emails",
+    "operationId": "addAdditionalEmailUsingPOST",
+    "summary": "Add a new additional email address to user's account",
+    "tags": [
+      "Information about user"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:profile:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "DELETE",
+    "path": "/account/additional-emails/{emailId}",
+    "operationId": "deleteAdditionalEmailUsingDELETE",
+    "summary": "Delete an additional email address",
+    "tags": [
+      "Information about user"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:profile:write"
+    ],
+    "responseCodes": [
+      "204",
+      "401",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/account/additional-emails/{emailId}",
+    "operationId": "getAdditionalEmailUsingGET",
+    "summary": "Get information about a particular additional email",
+    "tags": [
+      "Information about user"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:profile:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/me",
+    "operationId": "meGET",
+    "summary": "Get basic information about user",
+    "tags": [
+      "Information about user"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:profile:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/quality",
+    "operationId": "getSaleQualityUsingGET",
+    "summary": "Get sales quality",
+    "tags": [
+      "Information about user"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:profile:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/smart",
+    "operationId": "getSellerSmartClassificationGET",
+    "summary": "Get Smart! seller classification report",
+    "tags": [
+      "Information about user"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:profile:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/user-ratings",
+    "operationId": "getUserRatingsUsingGET",
+    "summary": "Get the user's ratings",
+    "tags": [
+      "Information about user"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:ratings"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 6
+  },
+  {
+    "method": "GET",
+    "path": "/sale/user-ratings/{ratingId}",
+    "operationId": "getUserRatingUsingGET",
+    "summary": "Get the user's rating by given rating id",
+    "tags": [
+      "Information about user"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:ratings"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/user-ratings/{ratingId}/answer",
+    "operationId": "answerUserRatingUsingPUT",
+    "summary": "Answer for user's rating",
+    "tags": [
+      "Information about user"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:ratings"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/user-ratings/{ratingId}/removal",
+    "operationId": "userRatingRemovalUsingPUT",
+    "summary": "Request removal of user's rating",
+    "tags": [
+      "Information about user"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:ratings"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "POST",
+    "path": "/messaging/message-attachments",
+    "operationId": "newAttachmentDeclarationPOST",
+    "summary": "Add attachment declaration",
+    "tags": [
+      "Message Center"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:messaging"
+    ],
+    "responseCodes": [
+      "201",
+      "401",
+      "415",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/messaging/message-attachments/{attachmentId}",
+    "operationId": "downloadAttachmentGET",
+    "summary": "Download attachment",
+    "tags": [
+      "Message Center"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:messaging"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/messaging/message-attachments/{attachmentId}",
+    "operationId": "uploadAttachmentPUT",
+    "summary": "Upload attachment binary data",
+    "tags": [
+      "Message Center"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:messaging"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404",
+      "413",
+      "415"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "POST",
+    "path": "/messaging/messages",
+    "operationId": "newMessagePOST",
+    "summary": "Write a new message",
+    "tags": [
+      "Message Center"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:messaging"
+    ],
+    "responseCodes": [
+      "201",
+      "401",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "DELETE",
+    "path": "/messaging/messages/{messageId}",
+    "operationId": "deleteMessageDELETE",
+    "summary": "Delete single message",
+    "tags": [
+      "Message Center"
+    ],
+    "deprecated": true,
+    "scopes": [
+      "allegro:api:messaging"
+    ],
+    "responseCodes": [
+      "204",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/messaging/messages/{messageId}",
+    "operationId": "getMessageGET",
+    "summary": "Get single message",
+    "tags": [
+      "Message Center"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:messaging"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/messaging/threads",
+    "operationId": "listThreadsGET",
+    "summary": "List user threads",
+    "tags": [
+      "Message Center"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:messaging"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "422"
+    ],
+    "parameterCount": 7
+  },
+  {
+    "method": "GET",
+    "path": "/messaging/threads/{threadId}",
+    "operationId": "getThreadGET",
+    "summary": "Get user thread",
+    "tags": [
+      "Message Center"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:messaging"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/messaging/threads/{threadId}/messages",
+    "operationId": "listMessagesGET",
+    "summary": "List messages in thread",
+    "tags": [
+      "Message Center"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:messaging"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 7
+  },
+  {
+    "method": "POST",
+    "path": "/messaging/threads/{threadId}/messages",
+    "operationId": "newMessageInThreadPOST",
+    "summary": "Write a new message in thread",
+    "tags": [
+      "Message Center"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:messaging"
+    ],
+    "responseCodes": [
+      "201",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/messaging/threads/{threadId}/read",
+    "operationId": "changeReadFlagOnThreadPUT",
+    "summary": "Mark a particular thread as read",
+    "tags": [
+      "Message Center"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:messaging"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/bundles",
+    "operationId": "listSellersOfferBundlesUsingGET",
+    "summary": "List seller's bundles",
+    "tags": [
+      "Offer bundles"
+    ],
+    "deprecated": true,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 4
+  },
+  {
+    "method": "DELETE",
+    "path": "/sale/bundles/{bundleId}",
+    "operationId": "deleteOfferBundleUsingGET",
+    "summary": "Delete bundle by ID",
+    "tags": [
+      "Offer bundles"
+    ],
+    "deprecated": true,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "204",
+      "401",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/bundles/{bundleId}",
+    "operationId": "getOfferBundleUsingGET",
+    "summary": "Get bundle by ID",
+    "tags": [
+      "Offer bundles"
+    ],
+    "deprecated": true,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/bundles/{bundleId}/discount",
+    "operationId": "updateOfferBundleDiscountUsingPUT",
+    "summary": "Update discount associated with bundle",
+    "tags": [
+      "Offer bundles"
+    ],
+    "deprecated": true,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/offers/{offerId}/change-price-commands/{commandId}",
+    "operationId": "createChangePriceCommandUsingPUT",
+    "summary": "Modify the Buy Now price in an offer",
+    "tags": [
+      "Offer management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "200",
+      "default"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offer-promotion-packages",
+    "operationId": "getAvailableOfferPromotionPackages",
+    "summary": "Get all available offer promotion packages",
+    "tags": [
+      "Offer management"
+    ],
+    "deprecated": false,
+    "scopes": [],
+    "responseCodes": [
+      "200",
+      "401"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offer-publication-commands/{commandId}",
+    "operationId": "getPublicationReportUsingGET",
+    "summary": "Publish command summary",
+    "tags": [
+      "Offer management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/offer-publication-commands/{commandId}",
+    "operationId": "changePublicationStatusUsingPUT",
+    "summary": "Batch offer publish / unpublish",
+    "tags": [
+      "Offer management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "403",
+      "404",
+      "409",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offer-publication-commands/{commandId}/tasks",
+    "operationId": "getPublicationTasksUsingGET",
+    "summary": "Publish command detailed report",
+    "tags": [
+      "Offer management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 4
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offers/promo-options",
+    "operationId": "getPromoOptionsForSellerOffersUsingGET",
+    "summary": "Get promo options for seller's offers",
+    "tags": [
+      "Offer management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offers/promo-options-commands/{commandId}",
+    "operationId": "getPromoModificationCommandResultUsingGET",
+    "summary": "Modification command summary",
+    "tags": [
+      "Offer management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/offers/promo-options-commands/{commandId}",
+    "operationId": "promoModificationCommandUsingPUT",
+    "summary": "Batch offer promotion package modification",
+    "tags": [
+      "Offer management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "201",
+      "401",
+      "409",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offers/promo-options-commands/{commandId}/tasks",
+    "operationId": "getPromoModificationCommandDetailedResultUsingGET",
+    "summary": "Modification command detailed result",
+    "tags": [
+      "Offer management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 4
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offers/unfilled-parameters",
+    "operationId": "getOffersUnfilledParametersUsingGET_1",
+    "summary": "Get offers with missing parameters",
+    "tags": [
+      "Offer management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403"
+    ],
+    "parameterCount": 5
+  },
+  {
+    "method": "DELETE",
+    "path": "/sale/offers/{offerId}",
+    "operationId": "deleteOfferUsingDELETE",
+    "summary": "Delete a draft offer",
+    "tags": [
+      "Offer management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "204",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offers/{offerId}/promo-options",
+    "operationId": "getOfferPromoOptionsUsingGET",
+    "summary": "Get offer promotion packages",
+    "tags": [
+      "Offer management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "POST",
+    "path": "/sale/offers/{offerId}/promo-options-modification",
+    "operationId": "modifyOfferPromoOptionsUsingPOST",
+    "summary": "Modify offer promotion packages",
+    "tags": [
+      "Offer management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "POST",
+    "path": "/sale/product-offers",
+    "operationId": "createProductOffers",
+    "summary": "Create offer based on product",
+    "tags": [
+      "Offer management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "201",
+      "202",
+      "400",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "PATCH",
+    "path": "/sale/product-offers/{offerId}",
+    "operationId": "editProductOffers",
+    "summary": "Edit an offer",
+    "tags": [
+      "Offer management"
+    ],
+    "deprecated": false,
+    "scopes": [],
+    "responseCodes": [
+      "200",
+      "202",
+      "400",
+      "401",
+      "403",
+      "404",
+      "409",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/product-offers/{offerId}/operations/{operationId}",
+    "operationId": "getProductOfferProcessingStatus",
+    "summary": "Check the processing status of a POST or PATCH request",
+    "tags": [
+      "Offer management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "202",
+      "303",
+      "400",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offers/{offerId}/rating",
+    "operationId": "offerRatingGET",
+    "summary": "Get offer rating",
+    "tags": [
+      "Offer rating"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offer-tags",
+    "operationId": "listSellerTagsGET_1",
+    "summary": "Get the user's tags",
+    "tags": [
+      "Offer tags"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "POST",
+    "path": "/sale/offer-tags",
+    "operationId": "createTagPOST_1",
+    "summary": "Create a tag",
+    "tags": [
+      "Offer tags"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "DELETE",
+    "path": "/sale/offer-tags/{tagId}",
+    "operationId": "deleteTagUsingDELETE",
+    "summary": "Delete a tag",
+    "tags": [
+      "Offer tags"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "204",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/offer-tags/{tagId}",
+    "operationId": "updateTagPUT",
+    "summary": "Modify a tag",
+    "tags": [
+      "Offer tags"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offers/{offerId}/tags",
+    "operationId": "listAssignedOfferTagsGET",
+    "summary": "Get tags assigned to an offer",
+    "tags": [
+      "Offer tags"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "POST",
+    "path": "/sale/offers/{offerId}/tags",
+    "operationId": "assignTagToOfferPOST",
+    "summary": "Assign tags to an offer",
+    "tags": [
+      "Offer tags"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offers/{offerId}/translations",
+    "operationId": "getOfferTranslationUsingGET",
+    "summary": "Get offer translations",
+    "tags": [
+      "Offer translations"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "DELETE",
+    "path": "/sale/offers/{offerId}/translations/{language}",
+    "operationId": "deleteManualTranslationUsingDELETE",
+    "summary": "Delete offer translation",
+    "tags": [
+      "Offer translations"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "200",
+      "204",
+      "401",
+      "403"
+    ],
+    "parameterCount": 5
+  },
+  {
+    "method": "PATCH",
+    "path": "/sale/offers/{offerId}/translations/{language}",
+    "operationId": "updateOfferTranslationUsingPATCH",
+    "summary": "Update offer translation",
+    "tags": [
+      "Offer translations"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "GET",
+    "path": "/order/carriers",
+    "operationId": "getOrdersCarriersUsingGET",
+    "summary": "Get a list of available shipping carriers",
+    "tags": [
+      "Order management"
+    ],
+    "deprecated": false,
+    "scopes": [],
+    "responseCodes": [
+      "200",
+      "401",
+      "404"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/order/carriers/ALLEGRO/points",
+    "operationId": "getAllegroPickupDropOffPointsGET",
+    "summary": "Get Allegro pickup drop off points",
+    "tags": [
+      "Order management"
+    ],
+    "deprecated": false,
+    "scopes": [],
+    "responseCodes": [
+      "200",
+      "304",
+      "400",
+      "401"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "GET",
+    "path": "/order/carriers/{carrierId}/tracking",
+    "operationId": "getParcelTrackingUsingGET",
+    "summary": "Get carrier parcel tracking history",
+    "tags": [
+      "Order management"
+    ],
+    "deprecated": false,
+    "scopes": [],
+    "responseCodes": [
+      "200",
+      "400",
+      "401"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "GET",
+    "path": "/order/checkout-forms",
+    "operationId": "getListOfOrdersUsingGET",
+    "summary": "Get the user's orders",
+    "tags": [
+      "Order management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:orders:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "406",
+      "422"
+    ],
+    "parameterCount": 17
+  },
+  {
+    "method": "GET",
+    "path": "/order/checkout-forms/{id}",
+    "operationId": "getOrdersDetailsUsingGET",
+    "summary": "Get an order's details",
+    "tags": [
+      "Order management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:orders:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "404",
+      "406",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/order/checkout-forms/{id}/fulfillment",
+    "operationId": "setOrderFulfillmentUsingPUT",
+    "summary": "Set seller order status",
+    "tags": [
+      "Order management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:orders:write"
+    ],
+    "responseCodes": [
+      "204",
+      "401",
+      "404",
+      "409",
+      "422"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "GET",
+    "path": "/order/checkout-forms/{id}/invoices",
+    "operationId": "getOrderInvoicesDetails",
+    "summary": "Get order invoices details",
+    "tags": [
+      "Order management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:orders:read"
+    ],
+    "responseCodes": [
+      "200",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "POST",
+    "path": "/order/checkout-forms/{id}/invoices",
+    "operationId": "addOrderInvoicesMetadata",
+    "summary": "Post new invoice",
+    "tags": [
+      "Order management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:orders:write"
+    ],
+    "responseCodes": [
+      "201",
+      "403",
+      "404",
+      "409",
+      "422",
+      "429"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/order/checkout-forms/{id}/invoices/{invoiceId}/file",
+    "operationId": "uploadOrderInvoiceFile",
+    "summary": "Upload invoice file",
+    "tags": [
+      "Order management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:orders:write"
+    ],
+    "responseCodes": [
+      "200",
+      "403",
+      "404",
+      "409",
+      "413",
+      "422"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "POST",
+    "path": "/order/checkout-forms/{id}/serial-numbers",
+    "operationId": "setOrderLineItemsSerialNumbersUsingPOST",
+    "summary": "Set line items' serial numbers",
+    "tags": [
+      "Order management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:orders:write"
+    ],
+    "responseCodes": [
+      "204",
+      "401",
+      "404",
+      "409",
+      "422"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "GET",
+    "path": "/order/checkout-forms/{id}/shipments",
+    "operationId": "getOrderShipmentsUsingGET",
+    "summary": "Get a list of parcel tracking numbers",
+    "tags": [
+      "Order management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:orders:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "POST",
+    "path": "/order/checkout-forms/{id}/shipments",
+    "operationId": "createOrderShipmentsUsingPOST",
+    "summary": "Add a parcel tracking number",
+    "tags": [
+      "Order management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:orders:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "404",
+      "409",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/order/event-stats",
+    "operationId": "getOrderEventsStatisticsUsingGET",
+    "summary": "Get order events statistics",
+    "tags": [
+      "Order management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:orders:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/order/events",
+    "operationId": "getOrderEventsUsingGET",
+    "summary": "Get order events",
+    "tags": [
+      "Order management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:orders:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 4
+  },
+  {
+    "method": "POST",
+    "path": "/order/{orderId}/billing-documents/links",
+    "operationId": "uploadOrderBillingDocumentLink",
+    "summary": "Upload URL to billing documents",
+    "tags": [
+      "Order management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:orders:write"
+    ],
+    "responseCodes": [
+      "201",
+      "403",
+      "404",
+      "409",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/payments/payment-operations",
+    "operationId": "getPaymentsOperationHistory",
+    "summary": "Payment operations history",
+    "tags": [
+      "Payments"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:payments:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "422"
+    ],
+    "parameterCount": 12
+  },
+  {
+    "method": "GET",
+    "path": "/payments/refunds",
+    "operationId": "getRefundedPayments",
+    "summary": "Get a list of refunded payments",
+    "tags": [
+      "Payments"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:payments:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 9
+  },
+  {
+    "method": "POST",
+    "path": "/payments/refunds",
+    "operationId": "initiateRefund",
+    "summary": "Initiate a refund of a payment",
+    "tags": [
+      "Payments"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:payments:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/points-of-service",
+    "operationId": "getPOSListUsingGET",
+    "summary": "Get the user's points of service",
+    "tags": [
+      "Points of service"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "POST",
+    "path": "/points-of-service",
+    "operationId": "createPOSUsingPOST",
+    "summary": "Create a point of service",
+    "tags": [
+      "Points of service"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "403",
+      "404",
+      "409",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "DELETE",
+    "path": "/points-of-service/{id}",
+    "operationId": "deletePOSUsingDELETE",
+    "summary": "Delete a point of service",
+    "tags": [
+      "Points of service"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "204",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/points-of-service/{id}",
+    "operationId": "getPOSDataUsingGET",
+    "summary": "Get the details of a point of service",
+    "tags": [
+      "Points of service"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/points-of-service/{id}",
+    "operationId": "modifyPOSUsingPUT",
+    "summary": "Modify a point of service",
+    "tags": [
+      "Points of service"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "409",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/issues",
+    "operationId": "getListOfIssuesUsingGET",
+    "summary": "Get the user's post purchase issues",
+    "tags": [
+      "Post Purchase Issues"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:disputes"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404",
+      "422"
+    ],
+    "parameterCount": 5
+  },
+  {
+    "method": "POST",
+    "path": "/sale/issues/attachments",
+    "operationId": "createAnIssueAttachmentUsingPOST",
+    "summary": "Create an attachment declaration",
+    "tags": [
+      "Post Purchase Issues"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:disputes"
+    ],
+    "responseCodes": [
+      "201",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/issues/attachments/{attachmentId}",
+    "operationId": "getIssueAttachmentUsingGET",
+    "summary": "Get an attachment",
+    "tags": [
+      "Post Purchase Issues"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:disputes"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/issues/attachments/{attachmentId}",
+    "operationId": "uploadIssueAttachmentUsingPUT",
+    "summary": "Upload an attachment",
+    "tags": [
+      "Post Purchase Issues"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:disputes"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "413",
+      "415",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/issues/{issueId}",
+    "operationId": "getIssueUsingGET",
+    "summary": "Get a single dispute or claim",
+    "tags": [
+      "Post Purchase Issues"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:disputes"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/issues/{issueId}/chat",
+    "operationId": "getChatFromIssueUsingGET",
+    "summary": "Get the messages and state claim changes within a post purchase issue",
+    "tags": [
+      "Post Purchase Issues"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:disputes"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 4
+  },
+  {
+    "method": "POST",
+    "path": "/sale/issues/{issueId}/message",
+    "operationId": "addMessageToIssueUsingPOST",
+    "summary": "Add a message to an issue",
+    "tags": [
+      "Post Purchase Issues"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:disputes"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "403",
+      "404",
+      "409",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "POST",
+    "path": "/sale/issues/{issueId}/status",
+    "operationId": "changeStatusOfIssueUsingPOST",
+    "summary": "Change status of a claim",
+    "tags": [
+      "Post Purchase Issues"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:disputes"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "POST",
+    "path": "/pricing/offer-fee-preview",
+    "operationId": "calculateFeePreviewUsingPOST",
+    "summary": "Calculate fee and commission for an offer",
+    "tags": [
+      "Pricing"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/pricing/offer-quotes",
+    "operationId": "offerQuotesPublicUsingGET",
+    "summary": "Get the user's current offer quotes",
+    "tags": [
+      "Pricing"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:billing:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "503"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/categories/{categoryId}/product-parameters",
+    "operationId": "getFlatProductParametersUsingGET",
+    "summary": "Get product parameters available in given category",
+    "tags": [
+      "Products"
+    ],
+    "deprecated": false,
+    "scopes": [],
+    "responseCodes": [
+      "200",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "POST",
+    "path": "/sale/product-proposals",
+    "operationId": "proposeSaleProduct",
+    "summary": "Propose a product",
+    "tags": [
+      "Products"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "403",
+      "409",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/products",
+    "operationId": "getSaleProducts",
+    "summary": "Get search products results",
+    "tags": [
+      "Products"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "422"
+    ],
+    "parameterCount": 8
+  },
+  {
+    "method": "GET",
+    "path": "/sale/products/change-proposals/{changeProposalId}",
+    "operationId": "getProductChangeProposal",
+    "summary": "Get all data of the particular product changes proposal",
+    "tags": [
+      "Products"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/products/{productId}",
+    "operationId": "getSaleProduct",
+    "summary": "Get all data of the particular product",
+    "tags": [
+      "Products"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404",
+      "422"
+    ],
+    "parameterCount": 4
+  },
+  {
+    "method": "POST",
+    "path": "/sale/products/{productId}/change-proposals",
+    "operationId": "productChangeProposal",
+    "summary": "Propose changes in product",
+    "tags": [
+      "Products"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "404",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/users/{userId}/ratings-summary",
+    "operationId": "getUserSummaryUsingGET",
+    "summary": "Get any user's ratings summary",
+    "tags": [
+      "Public user information"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:profile:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/loyalty/promotions",
+    "operationId": "listSellerPromotionsUsingGET_1",
+    "summary": "Get the user's list of promotions",
+    "tags": [
+      "Rebates and promotions"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "422"
+    ],
+    "parameterCount": 5
+  },
+  {
+    "method": "POST",
+    "path": "/sale/loyalty/promotions",
+    "operationId": "createPromotionUsingPOST_1",
+    "summary": "Create a new promotion",
+    "tags": [
+      "Rebates and promotions"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "403",
+      "404",
+      "412",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "DELETE",
+    "path": "/sale/loyalty/promotions/{promotionId}",
+    "operationId": "deactivatePromotionUsingDELETE",
+    "summary": "Deactivate a promotion by id",
+    "tags": [
+      "Rebates and promotions"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "204",
+      "401",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/loyalty/promotions/{promotionId}",
+    "operationId": "getPromotionUsingGET",
+    "summary": "Get a promotion data by id",
+    "tags": [
+      "Rebates and promotions"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/loyalty/promotions/{promotionId}",
+    "operationId": "updatePromotionUsingPUT",
+    "summary": "Modify a promotion",
+    "tags": [
+      "Rebates and promotions"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/turnover-discount",
+    "operationId": "getTurnoverDiscountsUsingGET",
+    "summary": "Get the list of turnover discounts",
+    "tags": [
+      "Rebates and promotions"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/turnover-discount/{marketplaceId}",
+    "operationId": "createOrModifyTurnoverDiscountUsingPUT",
+    "summary": "Create/modify turnover discount for marketplace",
+    "tags": [
+      "Rebates and promotions"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/turnover-discount/{marketplaceId}/deactivate",
+    "operationId": "deactivateTurnoverDiscountsUsingPUT",
+    "summary": "Deactivate turnover discount for marketplace",
+    "tags": [
+      "Rebates and promotions"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:write"
+    ],
+    "responseCodes": [
+      "200",
+      "204",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/responsible-persons",
+    "operationId": "responsiblePersonsGET",
+    "summary": "Get the list of responsible persons",
+    "tags": [
+      "Responsible persons"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 4
+  },
+  {
+    "method": "POST",
+    "path": "/sale/responsible-persons",
+    "operationId": "responsiblePersonsPOST",
+    "summary": "Create responsible person",
+    "tags": [
+      "Responsible persons"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/responsible-persons/{id}",
+    "operationId": "responsiblePersonsPUT",
+    "summary": "Update responsible person",
+    "tags": [
+      "Responsible persons"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 4
+  },
+  {
+    "method": "GET",
+    "path": "/sale/responsible-producers",
+    "operationId": "responsibleProducersGET",
+    "summary": "Get the list of responsible producers",
+    "tags": [
+      "Responsible producers"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 4
+  },
+  {
+    "method": "POST",
+    "path": "/sale/responsible-producers",
+    "operationId": "responsibleProducersPOST",
+    "summary": "Create responsible producer",
+    "tags": [
+      "Responsible producers"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "201",
+      "400",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "GET",
+    "path": "/sale/responsible-producers/{id}",
+    "operationId": "responsibleProducerGET",
+    "summary": "Get responsible producer",
+    "tags": [
+      "Responsible producers"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/responsible-producers/{id}",
+    "operationId": "responsibleProducersPUT",
+    "summary": "Update responsible producer",
+    "tags": [
+      "Responsible producers"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "422"
+    ],
+    "parameterCount": 4
+  },
+  {
+    "method": "GET",
+    "path": "/shipment-management/delivery-proposals/{orderId}",
+    "operationId": "getDeliveryProposals",
+    "summary": "Get available delivery options",
+    "tags": [
+      "Shipment management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:shipments:write"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "504"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/shipment-management/delivery-services",
+    "operationId": "getDeliveryServices",
+    "summary": "Get available delivery services",
+    "tags": [
+      "Shipment management"
+    ],
+    "deprecated": true,
+    "scopes": [
+      "allegro:api:shipments:write"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "504"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "POST",
+    "path": "/shipment-management/label",
+    "operationId": "getShipmentLabels",
+    "summary": "Get shipments labels",
+    "tags": [
+      "Shipment management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:shipments:read"
+    ],
+    "responseCodes": [
+      "200",
+      "204",
+      "400",
+      "401",
+      "403",
+      "404",
+      "504"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "POST",
+    "path": "/shipment-management/pickup-proposals",
+    "operationId": "getPickupProposals",
+    "summary": "Get shipments pickup proposals",
+    "tags": [
+      "Shipment management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:shipments:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "504"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "POST",
+    "path": "/shipment-management/pickups/create-commands",
+    "operationId": "createPickup",
+    "summary": "Request shipments pickup",
+    "tags": [
+      "Shipment management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:shipments:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/shipment-management/pickups/create-commands/{commandId}",
+    "operationId": "createPickupStatus",
+    "summary": "Create pickup command status",
+    "tags": [
+      "Shipment management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:shipments:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "504"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/shipment-management/pickups/{pickupId}",
+    "operationId": "getPickupDetails",
+    "summary": "Get pickup details",
+    "tags": [
+      "Shipment management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:shipments:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "504"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "POST",
+    "path": "/shipment-management/protocol",
+    "operationId": "getShipmentProtocol",
+    "summary": "Get shipments protocol",
+    "tags": [
+      "Shipment management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:shipments:read"
+    ],
+    "responseCodes": [
+      "200",
+      "204",
+      "400",
+      "401",
+      "403",
+      "404",
+      "504"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "POST",
+    "path": "/shipment-management/shipments/cancel-commands",
+    "operationId": "cancelShipment",
+    "summary": "Cancel shipment",
+    "tags": [
+      "Shipment management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:shipments:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/shipment-management/shipments/cancel-commands/{commandId}",
+    "operationId": "getShipmentCancellationStatus",
+    "summary": "Get shipment cancellation status",
+    "tags": [
+      "Shipment management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:shipments:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "504"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "POST",
+    "path": "/shipment-management/shipments/create-commands",
+    "operationId": "createNewShipment",
+    "summary": "Create new shipment",
+    "tags": [
+      "Shipment management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:shipments:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "504"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/shipment-management/shipments/create-commands/{commandId}",
+    "operationId": "getShipmentCreationStatus",
+    "summary": "Get shipment creation command status",
+    "tags": [
+      "Shipment management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:shipments:write"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "504"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/shipment-management/shipments/{shipmentId}",
+    "operationId": "getShipmentDetails",
+    "summary": "Get shipment details",
+    "tags": [
+      "Shipment management"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:shipments:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "504"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/size-tables",
+    "operationId": "getTablesUsingGET",
+    "summary": "Get the user's size tables",
+    "tags": [
+      "Size tables"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "POST",
+    "path": "/sale/size-tables",
+    "operationId": "createTableUsingPOST",
+    "summary": "Create a size table",
+    "tags": [
+      "Size tables"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "201",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/size-tables-templates",
+    "operationId": "getTablesTemplatesUsingGET",
+    "summary": "Get the size tables templates",
+    "tags": [
+      "Size tables"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/size-tables/{tableId}",
+    "operationId": "getTableUsingGET",
+    "summary": "Get a size table",
+    "tags": [
+      "Size tables"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "PUT",
+    "path": "/sale/size-tables/{tableId}",
+    "operationId": "modifyTableUsingPUT",
+    "summary": "Update a size table",
+    "tags": [
+      "Size tables"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:settings:write"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/fulfillment/tax-id",
+    "operationId": "getTaxId",
+    "summary": "Get tax identification number",
+    "tags": [
+      "Tax Identification Number"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:fulfillment:read"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "POST",
+    "path": "/fulfillment/tax-id",
+    "operationId": "addTaxId",
+    "summary": "Add tax identification number",
+    "tags": [
+      "Tax Identification Number"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:fulfillment:write"
+    ],
+    "responseCodes": [
+      "201",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "PUT",
+    "path": "/fulfillment/tax-id",
+    "operationId": "updateTaxId",
+    "summary": "Update tax identification number",
+    "tags": [
+      "Tax Identification Number"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:fulfillment:write"
+    ],
+    "responseCodes": [
+      "200",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 1
+  },
+  {
+    "method": "GET",
+    "path": "/sale/tax-settings",
+    "operationId": "getTaxSettingsForCategory",
+    "summary": "Get all tax settings for category",
+    "tags": [
+      "Tax settings"
+    ],
+    "deprecated": false,
+    "scopes": [],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "406"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offer-events",
+    "operationId": "getOfferEvents",
+    "summary": "Get events about the seller's offers",
+    "tags": [
+      "User's offer information"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401"
+    ],
+    "parameterCount": 4
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offers",
+    "operationId": "searchOffersUsingGET",
+    "summary": "Get seller's offers",
+    "tags": [
+      "User's offer information"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "403"
+    ],
+    "parameterCount": 24
+  },
+  {
+    "method": "GET",
+    "path": "/sale/offers/{offerId}/smart",
+    "operationId": "getOfferSmartClassificationGET",
+    "summary": "Get Smart! classification report of the particular offer",
+    "tags": [
+      "User's offer information"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404",
+      "422"
+    ],
+    "parameterCount": 3
+  },
+  {
+    "method": "GET",
+    "path": "/sale/product-offers/{offerId}",
+    "operationId": "getProductOffer",
+    "summary": "Get all data of the particular product-offer",
+    "tags": [
+      "User's offer information"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 2
+  },
+  {
+    "method": "GET",
+    "path": "/sale/product-offers/{offerId}/parts",
+    "operationId": "getPartialProductOffer",
+    "summary": "Get selected data of the particular product-offer",
+    "tags": [
+      "User's offer information"
+    ],
+    "deprecated": false,
+    "scopes": [
+      "allegro:api:sale:offers:read"
+    ],
+    "responseCodes": [
+      "200",
+      "400",
+      "401",
+      "403",
+      "404"
+    ],
+    "parameterCount": 3
+  }
+]
