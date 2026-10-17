@@ -50,6 +50,26 @@ Migawka z 2026-08-20 obejmuje **201 ścieżek, 267 operacji i 967 schematów**. 
 
 Workflow GitHub waliduje repo przy pull requeście/pushu, a codziennie porównuje hash oficjalnego Swaggera z migawką. Zmiana wymaga wygenerowania katalogu i przeglądu różnic — workflow nie modyfikuje repo automatycznie.
 
+## MCP Allegro — start wersji offline (2026-10-17)
+
+Uruchamialny **lokalny** serwer MCP z trzema narzędziami tylko do odczytu zapisanej dokumentacji API: `allegro_catalog_status`, `allegro_find_read_endpoints`, `allegro_get_read_endpoint`. Nie ma tokenów, dostępu do konta ani możliwości zmian ofert; obecna migawka OpenAPI wciąż pochodzi z 2026-08-20.
+
+- [Fundament MCP, granice bezpieczeństwa, testy](docs/07-architecture/mcp-allegro-foundation.md)
+- [Radar zmian API — 17.10.2026](docs/09-change-management/mcp-allegro-radar-2026-10-17.md)
+- [Serwer MCP — kod](allegro_mcp/server.py)
+- [Katalog źródeł](sources/registry.json) (zarejestrowane nowe komunikaty i oficjalna specyfikacja MCP)
+
+```bash
+python -m pip install -r requirements-mcp.txt
+python -m unittest discover -s tests -v
+python -m scripts.smoke_mcp
+python -m allegro_mcp.server
+```
+
+Wymagane Python 3.11+ i SDK przypięte do wersji `2.3.0`. Polecenie uruchomienia serwera używa standardowego MCP `stdio` (klient musi uruchomić proces). **Nie wystawiać po HTTP bez uwierzytelnienia MCP i Allegro.** Testy GitHub Actions sprawdzają protokół bez połączenia z kontem.
+
+Uwaga: powyższa aktualizacja dokumentów i źródeł z 2026-10-17 **nie oznacza**, że generowany katalog Swagger został odświeżony; przed integracją live niezbędny jest kontrolowany diff i PR.
+
 ## Czego repozytorium nie zawiera
 
 - Client ID, Client Secret, access tokenów i refresh tokenów;
