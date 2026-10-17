@@ -56,6 +56,7 @@ Uruchamialny **lokalny** serwer MCP z trzema narzędziami tylko do odczytu zapis
 
 - [Fundament MCP, granice bezpieczeństwa, testy](docs/07-architecture/mcp-allegro-foundation.md)
 - [Radar zmian API — 17.10.2026](docs/09-change-management/mcp-allegro-radar-2026-10-17.md)
+- [Audyt aktualnego OpenAPI — 270 operacji, 13 różnic (HOLD)](audit/openapi-drift-2026-10-17.md)
 - [Serwer MCP — kod](allegro_mcp/server.py)
 - [Katalog źródeł](sources/registry.json) (zarejestrowane nowe komunikaty i oficjalna specyfikacja MCP)
 
