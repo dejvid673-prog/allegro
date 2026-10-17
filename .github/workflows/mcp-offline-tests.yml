@@ -24,4 +24,4 @@ jobs:
       - name: Test offline catalog behavior
         run: python -m unittest discover -s tests -v
       - name: Test MCP protocol and tool exposure in memory
-        run: python scripts/smoke_mcp.py
+        run: python -m scripts.smoke_mcp
