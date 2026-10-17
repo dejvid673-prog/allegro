@@ -31,4 +31,26 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python scripts/check_openapi_freshness.py
+      # A changed upstream document is a review signal, not a broken scheduled job.
+      # Other failures (download, JSON, permissions, script errors) must still fail CI.
+      - name: Check Allegro OpenAPI freshness
+        shell: bash
+        run: |
+          set +e
+          python scripts/check_openapi_freshness.py
+          status=$?
+          set -e
+
+          if [ "$status" -eq 2 ] && [ "${{ github.event_name }}" = "schedule" ]; then
+            echo "::warning title=Allegro OpenAPI drift::Official spec differs from the pinned snapshot; regenerate and review the catalog."
+            {
+              echo "### Allegro OpenAPI drift (review required)"
+              echo "The official contract differs from the committed snapshot."
+              echo "Run \`python scripts/build_api_catalog.py\` and review the generated diff."
+              echo "Scheduled drift is advisory to avoid repeated identical failure emails."
+              echo "Manual workflow_dispatch retains strict non-zero validation."
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          exit "$status"
