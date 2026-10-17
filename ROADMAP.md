@@ -22,6 +22,17 @@
 
 Stan: **MCP offline, nie połączony z Allegro, nie produkcyjny**.
 
+### Audyt historycznego MCP i plan rozwoju — 2026-10-17
+
+- [x] weryfikacja deklaracji starego Allegro MCP 1.0, raportu QA oraz repozytoriów `mcp`, `7dejv-mcp` i `allegro`;
+- [x] sformalizowane wymagania: nadawanie paczek, audyt przesyłek, koszty, asortyment, draft ofert, ceny i konkurencja;
+- [x] propozycja rozdzielenia MCP od typed client i domain services, status **PROPOSED / do przeglądu**;
+- [x] matryca ryzyk i scenariusze akceptacyjne dla pierwszych etapów;
+- [ ] review projektu, wybór runtime i źródła nadrzędnego produktu/stocku;
+- [ ] implementacja offline `shipment_preflight` i `cost_audit` oraz testy, po zatwierdzeniu projektowych bramek.
+
+Patrz: [audyt](audit/legacy-allegro-mcp-2026-10-17.md), [projekt](docs/07-architecture/mcp-allegro-business-operator-proposal-2026-10-17.md), [plan](docs/07-architecture/mcp-allegro-implementation-plan-2026-10-17.md).
+
 ## Etap 1 — klient tylko do odczytu
 
 - OAuth i rotacja tokenów w sejfie sekretów;
