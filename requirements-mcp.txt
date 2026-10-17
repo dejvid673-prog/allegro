@@ -1,0 +1,2 @@
+# Official Python SDK v2 pinned for repeatable MCP smoke CI.
+mcp==2.3.0
