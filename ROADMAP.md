@@ -11,6 +11,17 @@
 - [x] obowiązkowy model kosztów, Ads/Top oferta i KPI jakości;
 - [ ] zatwierdzenie dokumentacji przez właściciela firmy.
 
+## Etap 0.5 — MCP Allegro offline (GitHub-only)
+
+- [x] architektura bezpiecznego MCP, źródła zmian z października 2026 i rozdział autoryzacji;
+- [x] pierwsze trzy narzędzia MCP tylko do odczytu lokalnej dokumentacji;
+- [x] testy jednostkowe i smoke MCP w CI — ostateczny wynik potwierdzać po PR;
+- [ ] wygenerować nowy katalog OpenAPI z oficjalnego Swaggera i zaakceptować diff (poprzednia migawka: 2026-08-20);
+- [ ] zaakceptować role/scope OAuth oraz bezpieczny model utrzymania sekretów poza Git;
+- [ ] dopiero później: prawdziwy adapter GET Allegro i testy sandbox/read-only.
+
+Stan: **MCP offline, nie połączony z Allegro, nie produkcyjny**.
+
 ## Etap 1 — klient tylko do odczytu
 
 - OAuth i rotacja tokenów w sejfie sekretów;
