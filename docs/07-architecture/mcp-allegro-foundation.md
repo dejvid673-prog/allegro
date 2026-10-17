@@ -19,7 +19,7 @@ python -m pip install -r requirements-mcp.txt
 python -m allegro_mcp.server
 ```
 
-MCP Inspector/klient otwiera proces jako stdio. Sam proces pozostaje uruchomiony i oczekuje na klienta; nie służy do ręcznego wpisywania poleceń w konsoli. Testy offline: `python -m unittest discover -s tests -v`. Smoke MCP: `python scripts/smoke_mcp.py`. GitHub Actions sprawdza oba.
+MCP Inspector/klient otwiera proces jako stdio. Sam proces pozostaje uruchomiony i oczekuje na klienta; nie służy do ręcznego wpisywania poleceń w konsoli. Testy offline: `python -m unittest discover -s tests -v`. Smoke MCP: `python -m scripts.smoke_mcp`. GitHub Actions sprawdza oba.
 
 ### Granice bezpieczeństwa kolejnego etapu
 
