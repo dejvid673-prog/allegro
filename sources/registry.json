@@ -703,6 +703,138 @@
       "last_verified": "2026-08-20",
       "status": "context-only",
       "notes": "Uzasadnia dokumentowanie pomiarów; kwoty zawsze pobieraj z bieżącego oficjalnego cennika."
+    },
+    {
+      "id": "mcp-spec-2026-07-28",
+      "title": "Model Context Protocol Specification 2026-07-28",
+      "url": "https://modelcontextprotocol.io/specification/2026-07-28",
+      "owner": "Model Context Protocol",
+      "kind": "specification",
+      "authority": 4,
+      "areas": [
+        "mcp",
+        "security",
+        "protocol"
+      ],
+      "review_cadence": "quarterly",
+      "last_verified": "2026-10-17",
+      "status": "active",
+      "notes": "Specyfikacja MCP v2026-07-28; nie daje autoryzacji sprzedawcy w Allegro."
+    },
+    {
+      "id": "mcp-python-sdk-v2",
+      "title": "Official MCP Python SDK v2",
+      "url": "https://py.sdk.modelcontextprotocol.io/",
+      "owner": "Model Context Protocol",
+      "kind": "sdk-documentation",
+      "authority": 4,
+      "areas": [
+        "mcp",
+        "python",
+        "development"
+      ],
+      "review_cadence": "monthly",
+      "last_verified": "2026-10-17",
+      "status": "active",
+      "notes": "MCPServer, Client i transport stdio; pakiet demonstracyjny pinowany do 2.3.0."
+    },
+    {
+      "id": "news-2026-10-multipack",
+      "title": "Koniec rabatów multipack jednoofertowych 2026-11-30",
+      "url": "https://developer.allegro.pl/news/rabaty-ilosciowe-wycofujemy-mozliwosc-tworzenia-rabatu-typu-multipack-4R3MoYWrPi5",
+      "owner": "Allegro",
+      "kind": "planned-change",
+      "authority": 3,
+      "areas": [
+        "promotions",
+        "offers"
+      ],
+      "review_cadence": "weekly",
+      "last_verified": "2026-10-17",
+      "status": "planned",
+      "notes": "Od 2026-11-30 wycofanie tworzenia i odczytu multipack jednej oferty."
+    },
+    {
+      "id": "news-2026-10-ingredients",
+      "title": "Pole categoryId dla POST /ingredients/parse",
+      "url": "https://developer.allegro.pl/news/post-ingredients-parse-dodalismy-pole-categoryid-k17omEL5ose",
+      "owner": "Allegro",
+      "kind": "breaking-change",
+      "authority": 3,
+      "areas": [
+        "products",
+        "ingredients"
+      ],
+      "review_cadence": "weekly",
+      "last_verified": "2026-10-17",
+      "status": "active",
+      "notes": "Od 13.10 opcjonalne, od 13.11.2026 wymagane."
+    },
+    {
+      "id": "news-2026-10-messaging",
+      "title": "Problemy z zakupem na /messaging beta.v1 od 2026-10-28",
+      "url": "https://developer.allegro.pl/news/centrum-wiadomosci-dostosuj-aplikacje-do-nowej-wersji-beta-v1-endpointow-na-sciezce-messaging-zostaly-juz-tylko-3-tygodnie-jn0YLm5rYiK",
+      "owner": "Allegro",
+      "kind": "breaking-change",
+      "authority": 3,
+      "areas": [
+        "messaging",
+        "sales-quality",
+        "privacy"
+      ],
+      "review_cadence": "daily",
+      "last_verified": "2026-10-17",
+      "status": "planned",
+      "notes": "Nowe Problemy z zakupem przez beta.v1 /messaging dla kont firmowych od 28.10.2026; stare /sale/issues nie migrują."
+    },
+    {
+      "id": "news-2026-10-invoices",
+      "title": "Nowe POST /order/{orderId}/billing-documents/files",
+      "url": "https://developer.allegro.pl/news/zamowienia-uproscilismy-zalaczanie-faktur-jn0aj75mxcW",
+      "owner": "Allegro",
+      "kind": "change-notice",
+      "authority": 3,
+      "areas": [
+        "orders",
+        "invoices",
+        "privacy"
+      ],
+      "review_cadence": "monthly",
+      "last_verified": "2026-10-17",
+      "status": "active",
+      "notes": "Nowy pojedynczy upload faktury od 05.10.2026; stary dwuetapowy proces deprecated."
+    },
+    {
+      "id": "news-2026-10-ratings",
+      "title": "Oceny sprzedaży: zmiana public.v1 od 2026-11-02",
+      "url": "https://developer.allegro.pl/news/oceny-sprzedazy-2-listopada-2026-wdrozymy-nowa-strukture-na-wersji-public-v1-3A3BzbYWjIW",
+      "owner": "Allegro",
+      "kind": "breaking-change",
+      "authority": 3,
+      "areas": [
+        "ratings",
+        "sales-quality"
+      ],
+      "review_cadence": "weekly",
+      "last_verified": "2026-10-17",
+      "status": "planned",
+      "notes": "Nowy model GET /sale/user-ratings i szczegółów 2.11.2026, różnice media type."
+    },
+    {
+      "id": "news-2026-10-tracking",
+      "title": "Numery przewozowe tylko w packages.transportingInfo od 2026-10-29",
+      "url": "https://developer.allegro.pl/news/wysylam-z-allegro-29-pazdziernika-przestaniemy-zwracac-numery-przewozowe-w-obiekcie-additionalproperties-WvgDEDPAlfX",
+      "owner": "Allegro",
+      "kind": "breaking-change",
+      "authority": 3,
+      "areas": [
+        "shipments",
+        "tracking"
+      ],
+      "review_cadence": "daily",
+      "last_verified": "2026-10-17",
+      "status": "planned",
+      "notes": "GET /shipment-management/shipments/{shipmentId}: od 29.10.2026 brak listów przewozowych w additionalProperties."
     }
   ]
 }
