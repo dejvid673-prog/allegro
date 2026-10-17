@@ -29,6 +29,16 @@ jobs:
         run: python scripts/build_api_catalog.py
       - name: Validate generated catalog and registry
         run: python scripts/validate_repository.py
+      - name: Compare documented operations
+        shell: bash
+        run: |
+          git show HEAD:sources/generated/endpoints.json > "$RUNNER_TEMP/pinned-endpoints.json"
+          python scripts/compare_api_catalogs.py \
+            --before "$RUNNER_TEMP/pinned-endpoints.json" \
+            --after sources/generated/endpoints.json \
+            --output-json candidate-operation-diff.json \
+            --output-markdown candidate-operation-diff.md
+          cat candidate-operation-diff.md >> "$GITHUB_STEP_SUMMARY"
       - name: Compare upstream snapshot metadata
         shell: bash
         run: |
@@ -72,3 +82,5 @@ jobs:
             sources/generated/endpoints.json
             sources/generated/openapi-metadata.json
             docs/02-api/endpoint-catalog.md
+            candidate-operation-diff.json
+            candidate-operation-diff.md
