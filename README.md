@@ -71,6 +71,16 @@ Wymagane Python 3.11+ i SDK przypięte do wersji `2.3.0`. Polecenie uruchomienia
 
 Uwaga: powyższa aktualizacja dokumentów i źródeł z 2026-10-17 **nie oznacza**, że generowany katalog Swagger został odświeżony; przed integracją live niezbędny jest kontrolowany diff i PR.
 
+## Kierunek: pełny MCP operator sprzedaży (audyt 17.10.2026)
+
+Na podstawie wcześniejszego Allegro MCP 1.0 oraz repozytoriów `7dejv-mcp` i `mcp` opracowano **audyt, propozycję architektury i plan**, które **nie są jeszcze implementacją** obsługi sprzedawcy.
+
+- [Audyt wcześniejszego Allegro MCP i luk](audit/legacy-allegro-mcp-2026-10-17.md)
+- [PROPOSED: operator przesyłek, kosztów, produktów, cen i konkurencji](docs/07-architecture/mcp-allegro-business-operator-proposal-2026-10-17.md)
+- [PROPOSED: plan wdrożenia i testy akceptacyjne](docs/07-architecture/mcp-allegro-implementation-plan-2026-10-17.md)
+
+Kolejność: audyt przesyłek / offline packing preflight → kosztorys → OAuth READ → rzeczywisty audyt WzA → kontrolowane nadawanie, drafty i zmiany cen → analiza rynku z legalnego źródła. Obecny serwer MCP nadal ma **tylko 3 narzędzia do dokumentacji**. Konkurencyjny `GET /offers/listing` nie jest dostępny w zwykłym API Allegro; nie zakładać tego źródła.
+
 ## Czego repozytorium nie zawiera
 
 - Client ID, Client Secret, access tokenów i refresh tokenów;
