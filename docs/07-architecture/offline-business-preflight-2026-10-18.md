@@ -16,7 +16,7 @@ Order contains:
 - items: list of unique SKU, kind and positive integer quantity; kind is CHALK_BAG, CANISTER_5L, PALLET or OTHER.
 - service: verified (boolean), max_weight_grams (positive integer), supports_cod (boolean).
 - cod_required (boolean), cod_amount_gross (decimal string when required).
-- shipment_status (NOT_CREATED, LABEL_CREATED or HANDED_OVER), first_scan_at (optional timestamp as string).
+- shipment_status (NOT_CREATED, LABEL_CREATED or HANDED_OVER), first_scan_at (optional timestamp as string) and first_scan_verified (boolean assertion). Even a verified=true assertion is **not evidence from Allegro/carrier**; this offline tool cannot establish actual handover.
 
 Parcels are list of objects with items (SKU + positive quantity), packed_weight_grams (positive integer, measured **after packing**) and verified (boolean). Missing or unverified source is HUMAN_REQUIRED, not an excuse to invent weights. The API does not verify the caller's claim of source verification.
 
