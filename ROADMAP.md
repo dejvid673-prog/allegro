@@ -92,3 +92,14 @@ Patrz: [audyt](audit/legacy-allegro-mcp-2026-10-17.md), [projekt](docs/07-archit
 - wysyłka żywych ryb zwykłą ścieżką kurierską;
 - swobodne kopiowanie ofert pomiędzy kontami powiązanymi;
 - zwroty środków i zakończenie dużej liczby ofert.
+
+
+### Implementacja offline preflight — 2026-10-18
+
+- [x] Deterministyczny audyt planu pakowania i przesyłek bez API, tokenów i etykiet.
+- [x] Audyt kompletności kosztów netto i marży z dokładną arytmetyką Decimal, blokada UNKNOWN.
+- [x] Dwa read-only MCP tools i testy jednostkowe oraz in-memory protocol smoke w CI.
+- [ ] Zweryfikowany odczyt rzeczywistych zamówień i carrier tracking; decyzja o OAuth/connectionId.
+- [ ] Trwały ledger i zatwierdzenia przed jakimkolwiek nadaniem lub edycją cen.
+
+[Kontrakt wejścia i ograniczenia](docs/07-architecture/offline-business-preflight-2026-10-18.md).
