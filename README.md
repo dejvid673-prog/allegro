@@ -58,6 +58,15 @@ Uruchamialny **lokalny** serwer MCP z trzema narzędziami tylko do odczytu zapis
 - [Radar zmian API — 17.10.2026](docs/09-change-management/mcp-allegro-radar-2026-10-17.md)
 - [Audyt aktualnego OpenAPI — 270 operacji, 13 różnic (HOLD)](audit/openapi-drift-2026-10-17.md)
 - [Serwer MCP — kod](allegro_mcp/server.py)
+
+### Dwa narzędzia biznesowe offline (18.10.2026)
+
+Oprócz 3 narzędzi katalogowych serwer udostępnia teraz **2 narzędzia lokalnego preflightu**:
+- `allegro_shipment_preflight_offline(order, parcels)` — kontrola przydziału towarów do paczek, reguł kredy i baniek 5 L, COD, masy i statusu nadania;
+- `allegro_cost_preflight_offline(cost_snapshot)` — weryfikacja kompletności danych kosztowych i kalkulacja marży netto (Decimal) wyłącznie z jawnie dostarczonych danych.
+
+Dokumentacja: [Offline business preflight](docs/07-architecture/offline-business-preflight-2026-10-18.md). **Brak połączenia z Allegro, OAuth, faktycznego nadawania, kontroli realnych cen lub rozliczeń**; PASS oznacza jedynie sprawdzenie wprowadzonego planu. Dotychczasowa migawka Swagger nadal wymaga przeglądu.
+
 - [Katalog źródeł](sources/registry.json) (zarejestrowane nowe komunikaty i oficjalna specyfikacja MCP)
 
 ```bash
