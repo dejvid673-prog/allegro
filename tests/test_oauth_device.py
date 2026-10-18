@@ -166,6 +166,21 @@ class DeviceOAuthTests(unittest.TestCase):
         with self.assertRaises(OAuthFlowError):
             self.client.refresh("refresh")
 
+    def test_invalid_token_type_none_is_sanitized(self):
+        self.poster.payload = {
+            "access_token": "SECRET", "refresh_token": "REFRESH_SECRET",
+            "token_type": None, "expires_in": 3600,
+        }
+        with self.assertRaises(OAuthFlowError) as c:
+            self.client.refresh("REFRESH_SECRET")
+        self.assertEqual(c.exception.reason, "INVALID_TOKEN_RESPONSE")
+
+    def test_malformed_verification_uri_port_is_sanitized(self):
+        self.poster.payload["verification_uri"] = "https://allegro.pl:malicious/skojarz-aplikacje"
+        with self.assertRaises(OAuthFlowError) as c:
+            self.client.begin()
+        self.assertEqual(c.exception.reason, "INVALID_VERIFICATION_URI")
+
     def test_bad_poll_code_and_interval_rejected_before_network(self):
         for code, interval in (("", 5), ("TOKEN", 0), ("TOKEN", True),
                                ("TOKEN", -1), ("TOKEN", 999999)):
