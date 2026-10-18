@@ -126,6 +126,8 @@ class ShipmentPreflightTests(unittest.TestCase):
         o = order(); o["shipment_status"] = "LABEL_CREATED"
         self.assertFalse(audit_shipment_plan(o, parcels())["handover_confirmed"])
         o["first_scan_at"] = "2026-10-18T10:00:00Z"
+        self.assertFalse(audit_shipment_plan(o, parcels())["handover_confirmed"])
+        o["first_scan_verified"] = True
         self.assertTrue(audit_shipment_plan(o, parcels())["handover_confirmed"])
 
     def test_duplicate_and_unexpected_sku_blocked(self):
