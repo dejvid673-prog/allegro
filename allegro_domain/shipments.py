@@ -143,7 +143,8 @@ def audit_shipment_plan(order: dict, parcels: list[dict]) -> dict:
                 review("CANISTER_FOUR_REQUIRES_TWO_PLUS_TWO")
 
     first_scan = order.get("first_scan_at")
-    handed_over = isinstance(first_scan, str) and bool(first_scan.strip())
+    handed_over = (isinstance(first_scan, str) and bool(first_scan.strip())
+                   and order.get("first_scan_verified") is True)
     if order.get("shipment_status") == "HANDED_OVER" and not handed_over:
         block("HANDOVER_UNCONFIRMED")
     if order.get("shipment_status") == "LABEL_CREATED" and not handed_over:
