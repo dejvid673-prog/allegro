@@ -88,6 +88,14 @@ Rozpoczęto rzeczywisty adapter API: [allegro_api/read_client.py](allegro_api/re
 
 [Dokumentacja i testy adaptera READ](docs/07-architecture/allegro-read-client-2026-10-18.md).
 
+## OAuth Device Flow — testowany offline, bez prawdziwego logowania (18.10.2026)
+
+Dodano niezależny moduł [allegro_api/device_oauth.py](allegro_api/device_oauth.py) z POST-only Device Authorization, pojedynczym odpytaniem statusu i odświeżaniem pary access/refresh token. Tokenów i Client Secret **nie zapisujemy w repo**. Ograniczono żądania do trzech deklarowanych zakresów READ; zmiany w ofertach, cenach i nadawanie paczek nadal są zablokowane.
+
+**Etap mock/contract, a nie CONNECTED.** Nie ma jeszcze serwerowego sejfu/rotacji tokenów, autoryzowanego konta ani realnych testów OAuth Sandbox; weryfikacja scope i tożsamości sprzedawcy pozostaje obowiązkowa. MCP nadal udostępnia jedynie pięć narzędzi offline.
+
+[Założenia bezpieczeństwa i ograniczenia OAuth](docs/07-architecture/allegro-device-oauth-2026-10-18.md).
+
 ## Kierunek: pełny MCP operator sprzedaży (audyt 17.10.2026)
 
 Na podstawie wcześniejszego Allegro MCP 1.0 oraz repozytoriów `7dejv-mcp` i `mcp` opracowano **audyt, propozycję architektury i plan**, które **nie są jeszcze implementacją** obsługi sprzedawcy.
