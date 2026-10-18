@@ -103,3 +103,15 @@ Patrz: [audyt](audit/legacy-allegro-mcp-2026-10-17.md), [projekt](docs/07-archit
 - [ ] Trwały ledger i zatwierdzenia przed jakimkolwiek nadaniem lub edycją cen.
 
 [Kontrakt wejścia i ograniczenia](docs/07-architecture/offline-business-preflight-2026-10-18.md).
+
+
+### Adapter Allegro GET — 18.10.2026
+
+- [x] Biblioteczny klient GET-only: oferty, szczegóły ofert, zamówienia, zdarzenia i propozycje dostawy.
+- [x] Rejestr połączeń dla różnych kont i środowisk; uprawnienia oraz scoped GET, bez tokenów w narzędziach MCP.
+- [x] Testy fake transport + rozdzielenie kont + błędy HTTP 401/403/429/5xx i brak automatycznych retry.
+- [ ] OAuth Device Flow/Authorization Code, bezpieczne tokeny, weryfikacja tożsamości konta i zakresów.
+- [ ] Prawdziwe bezpieczne testy GET Sandbox z upoważnionym sprzedawcą.
+- [ ] Privacy-safe projection dla danych zamówień przed publikacją do MCP.
+
+[Kontrakt i ograniczenia klienta READ](docs/07-architecture/allegro-read-client-2026-10-18.md).
