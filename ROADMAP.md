@@ -115,3 +115,15 @@ Patrz: [audyt](audit/legacy-allegro-mcp-2026-10-17.md), [projekt](docs/07-archit
 - [ ] Privacy-safe projection dla danych zamówień przed publikacją do MCP.
 
 [Kontrakt i ograniczenia klienta READ](docs/07-architecture/allegro-read-client-2026-10-18.md).
+
+
+### OAuth Device Flow — 18.10.2026
+
+- [x] Wymuszenie wybranych tylko READ scopes i różnych oficjalnych hostów Sandbox/production.
+- [x] POST form device, poll_once authorization_pending/slow_down/access_denied i stateless refresh tokenów.
+- [x] Testy mock + sanitarne błędy bez tokenów/sekretów w komunikatach.
+- [ ] Prawdziwe OAuth na koncie testowym przy zgodzie właściciela, kontrola scopes/identity, interval/expiry.
+- [ ] Sejf sekretów, atomowy refresh i rozdzielenie kont.
+- [ ] Połączenie token broker → GET client → privacy-safe MCP tools.
+
+[Szczegóły OAuth](docs/07-architecture/allegro-device-oauth-2026-10-18.md).
