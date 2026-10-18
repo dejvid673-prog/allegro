@@ -105,11 +105,15 @@ def _positive_int(value: object, min_value: int, max_value: int) -> int:
 def _official_user_link(environment: str, url: object) -> str:
     if not isinstance(url, str):
         raise OAuthFlowError("INVALID_VERIFICATION_URI")
-    parsed = urlsplit(url)
-    allowed_host = urlsplit(AUTH_ROOTS[environment]).hostname
-    if (parsed.scheme != "https" or parsed.hostname != allowed_host
-            or parsed.port is not None or parsed.username or parsed.password
-            or parsed.path != "/skojarz-aplikacje"):
+    try:
+        parsed = urlsplit(url)
+        allowed_host = urlsplit(AUTH_ROOTS[environment]).hostname
+        valid = (parsed.scheme == "https" and parsed.hostname == allowed_host
+                 and parsed.port is None and not parsed.username
+                 and not parsed.password and parsed.path == "/skojarz-aplikacje")
+    except ValueError:
+        raise OAuthFlowError("INVALID_VERIFICATION_URI") from None
+    if not valid:
         raise OAuthFlowError("INVALID_VERIFICATION_URI")
     return url
 
@@ -131,9 +135,10 @@ def _parse_json(response: Response) -> dict:
 def _token_pair(parsed: dict) -> TokenPair:
     token = parsed.get("access_token")
     refresh = parsed.get("refresh_token")
+    token_type = parsed.get("token_type")
     if (not isinstance(token, str) or not token.strip() or
             not isinstance(refresh, str) or not refresh.strip() or
-            parsed.get("token_type", "").casefold() != "bearer"):
+            not isinstance(token_type, str) or token_type.casefold() != "bearer"):
         raise OAuthFlowError("INVALID_TOKEN_RESPONSE")
     expires = _positive_int(parsed.get("expires_in"), 1, 2_000_000)
     scope = parsed.get("scope", "")
