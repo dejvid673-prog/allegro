@@ -80,6 +80,14 @@ Wymagane Python 3.11+ i SDK przypięte do wersji `2.3.0`. Polecenie uruchomienia
 
 Uwaga: powyższa aktualizacja dokumentów i źródeł z 2026-10-17 **nie oznacza**, że generowany katalog Swagger został odświeżony; przed integracją live niezbędny jest kontrolowany diff i PR.
 
+## Klient Allegro REST API — tylko READ, jeszcze bez logowania (18.10.2026)
+
+Rozpoczęto rzeczywisty adapter API: [allegro_api/read_client.py](allegro_api/read_client.py). Kod implementuje sześć stałych operacji GET dla ofert, zamówień, zdarzeń oraz propozycji dostaw. Konta są rozdzielone przez serwerowy rejestr połączeń i uprawnienia aktorów; backend obsługuje limity, błędy i maskowanie tokenów.
+
+**UWAGA: nie jest to jeszcze połączenie z kontem Allegro.** Nie ma OAuth, magazynu tokenów, autoryzowanego klienta MCP ani realnych testów Sandbox. HTTP transport jest gotowy jako moduł biblioteczny, ale nikt go nie uruchomił z rzeczywistym kontem. W dalszym ciągu MCP wystawia **5 narzędzi offline**.
+
+[Dokumentacja i testy adaptera READ](docs/07-architecture/allegro-read-client-2026-10-18.md).
+
 ## Kierunek: pełny MCP operator sprzedaży (audyt 17.10.2026)
 
 Na podstawie wcześniejszego Allegro MCP 1.0 oraz repozytoriów `7dejv-mcp` i `mcp` opracowano **audyt, propozycję architektury i plan**, które **nie są jeszcze implementacją** obsługi sprzedawcy.
@@ -88,7 +96,7 @@ Na podstawie wcześniejszego Allegro MCP 1.0 oraz repozytoriów `7dejv-mcp` i `m
 - [PROPOSED: operator przesyłek, kosztów, produktów, cen i konkurencji](docs/07-architecture/mcp-allegro-business-operator-proposal-2026-10-17.md)
 - [PROPOSED: plan wdrożenia i testy akceptacyjne](docs/07-architecture/mcp-allegro-implementation-plan-2026-10-17.md)
 
-Kolejność: audyt przesyłek / offline packing preflight → kosztorys → OAuth READ → rzeczywisty audyt WzA → kontrolowane nadawanie, drafty i zmiany cen → analiza rynku z legalnego źródła. Obecny serwer MCP nadal ma **tylko 3 narzędzia do dokumentacji**. Konkurencyjny `GET /offers/listing` nie jest dostępny w zwykłym API Allegro; nie zakładać tego źródła.
+Kolejność: audyt przesyłek / offline packing preflight → kosztorys → OAuth READ → rzeczywisty audyt WzA → kontrolowane nadawanie, drafty i zmiany cen → analiza rynku z legalnego źródła. Obecny serwer MCP ma **3 narzędzia dokumentacyjne i 2 narzędzia biznesowego audytu offline**; klient Allegro READ nie jest jeszcze udostępniony przez MCP. Konkurencyjny `GET /offers/listing` nie jest dostępny w zwykłym API Allegro; nie zakładać tego źródła.
 
 ## Czego repozytorium nie zawiera
 
