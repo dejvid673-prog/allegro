@@ -87,7 +87,7 @@ def audit_shipment_events(shipments: list[dict], as_of: str | None = None) -> di
                 carrier_amount = nonnegative_amount(carrier, "carrier_cod_amount_gross")
                 if expected_amount == 0 or carrier_amount == 0:
                     report("COD_AMOUNT_ZERO", conn, order, shipping_id, block=True)
-                elif expected_amount != carrier_amount:
+                if expected_amount != carrier_amount:
                     report("COD_AMOUNT_MISMATCH", conn, order, shipping_id, block=True)
         tracking = row.get("tracking_number")
         if tracking is not None:
