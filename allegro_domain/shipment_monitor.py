@@ -82,10 +82,13 @@ def audit_shipment_events(shipments: list[dict], as_of: str | None = None) -> di
             carrier = row.get("carrier_cod_amount_gross")
             if expected is None or carrier is None:
                 report("COD_AMOUNT_MISSING", conn, order, shipping_id, block=True)
-            elif nonnegative_amount(expected, "cod_amount_gross") != nonnegative_amount(
-                carrier, "carrier_cod_amount_gross"
-            ):
-                report("COD_AMOUNT_MISMATCH", conn, order, shipping_id, block=True)
+            else:
+                expected_amount = nonnegative_amount(expected, "cod_amount_gross")
+                carrier_amount = nonnegative_amount(carrier, "carrier_cod_amount_gross")
+                if expected_amount == 0 or carrier_amount == 0:
+                    report("COD_AMOUNT_ZERO", conn, order, shipping_id, block=True)
+                elif expected_amount != carrier_amount:
+                    report("COD_AMOUNT_MISMATCH", conn, order, shipping_id, block=True)
         tracking = row.get("tracking_number")
         if tracking is not None:
             _id(tracking, f"shipments[{i}].tracking_number")
@@ -95,6 +98,10 @@ def audit_shipment_events(shipments: list[dict], as_of: str | None = None) -> di
                 report("TRACKING_ASSIGNED_TO_MULTIPLE_ORDERS",
                        conn, order, shipping_id, block=True)
             track_to_order[tracking_key] = order
+        if label is None and state not in {"NOT_CREATED", "CANCELLED"}:
+            report("MISSING_LABEL_TIMESTAMP", conn, order, shipping_id)
+        if label is not None and label > now + timedelta(minutes=5):
+            report("LABEL_FROM_FUTURE", conn, order, shipping_id, block=True)
         if verified and scan is None:
             report("SCAN_VERIFIED_WITHOUT_TIMESTAMP", conn, order, shipping_id, block=True)
         if scan is not None and scan > now + timedelta(minutes=5):
