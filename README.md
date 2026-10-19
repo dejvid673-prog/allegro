@@ -104,7 +104,19 @@ Na podstawie wcześniejszego Allegro MCP 1.0 oraz repozytoriów `7dejv-mcp` i `m
 - [PROPOSED: operator przesyłek, kosztów, produktów, cen i konkurencji](docs/07-architecture/mcp-allegro-business-operator-proposal-2026-10-17.md)
 - [PROPOSED: plan wdrożenia i testy akceptacyjne](docs/07-architecture/mcp-allegro-implementation-plan-2026-10-17.md)
 
-Kolejność: audyt przesyłek / offline packing preflight → kosztorys → OAuth READ → rzeczywisty audyt WzA → kontrolowane nadawanie, drafty i zmiany cen → analiza rynku z legalnego źródła. Obecny serwer MCP ma **3 narzędzia dokumentacyjne i 2 narzędzia biznesowego audytu offline**; klient Allegro READ nie jest jeszcze udostępniony przez MCP. Konkurencyjny `GET /offers/listing` nie jest dostępny w zwykłym API Allegro; nie zakładać tego źródła.
+Kolejność: audyt przesyłek / offline packing preflight → kosztorys → OAuth READ → rzeczywisty audyt WzA → kontrolowane nadawanie, drafty i zmiany cen → analiza rynku z legalnego źródła. Serwer MCP ma obecnie **3 narzędzia dokumentacyjne i 6 narzędzi biznesowych offline**; klient Allegro READ nie jest jeszcze udostępniony przez MCP. Konkurencyjny `GET /offers/listing` nie jest dostępny w zwykłym API Allegro; nie zakładać tego źródła.
+
+## MCP Allegro — audyt asortymentu, cen, konkurencji i przesyłek (19.10.2026)
+
+Rozszerzono lokalny serwer o **4 nowe narzędzia analizy offline** (łącznie 9 narzędzi MCP: 3 katalogowe + 6 analitycznych):
+- `allegro_assortment_audit_offline(offers, product_master)` — rozbieżności cen, stanów, GTIN/SKU na wielu kontach;
+- `allegro_price_change_proposal_offline(current_offer, proposed_price_gross, projected_cost_snapshot)` — propozycja ceny ze sprawdzeniem kompletnego NET rachunku kosztów i marży;
+- `allegro_market_comparison_offline(own_offers, competitor_observations)` — ceny całkowite i za kg z ręcznie dostarczonych źródeł, bez scrapingu;
+- `allegro_shipment_events_audit_offline(shipments, as_of=None)` — brak pierwszego skanu, etykiety bez przekazania, COD i duplikaty tracking.
+
+Instrukcja, formaty danych i ograniczenia: [Offline commerce audits](docs/07-architecture/offline-commerce-audits-2026-10-19.md).
+
+**Wszystkie 4 operacje są offline i bez zapisu**. Ich dane wejściowe pochodzą od operatora, nie z Allegro. Przebadanie formatów danych nie jest potwierdzeniem połączenia z kontem. Nadal wymagane są rzeczywisty OAuth, bezpieczne projekcje PII i testy Sandbox przed uruchomieniem pracy na zamówieniach.
 
 ## Czego repozytorium nie zawiera
 
