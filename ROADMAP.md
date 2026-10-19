@@ -127,3 +127,21 @@ Patrz: [audyt](audit/legacy-allegro-mcp-2026-10-17.md), [projekt](docs/07-archit
 - [ ] Połączenie token broker → GET client → privacy-safe MCP tools.
 
 [Szczegóły OAuth](docs/07-architecture/allegro-device-oauth-2026-10-18.md).
+
+
+### Commerce Audits Offline — 2026-10-19
+
+- [x] `allegro_assortment_audit_offline`: wielokontowy audyt różnic SKU/GTIN/ceny/stanu — tylko dane dostarczone i jawne oczekiwania per connection.
+- [x] `allegro_price_change_proposal_offline`: symulacja nowej ceny tylko przy kompletnym nowym rachunku NET kosztów i znanej marży minimalnej.
+- [x] `allegro_market_comparison_offline`: dopasowanie GTIN/masy/sztuk/stanu oraz łączny koszt z dostawą; tylko źródła przekazane przez użytkownika.
+- [x] `allegro_shipment_events_audit_offline`: analiza label/first scan/COD/tracking z kontrolą statusu, bez połączenia z przewoźnikiem.
+- [x] Testy jednostkowe i smoke in-memory nowego MCP (łączna liczba narzędzi: 9); PASS trzeba przypisać do konkretnego SHA CI, nie do całego projektu.
+- [ ] Pełny test lokalnego stdio subprocess + Windows.
+- [ ] Dalsza izolowana integracja READ OAuth z kontami, weryfikacja sprzedawcy i projekcje prywatności.
+- [ ] Produkcyjna synchronizacja zamówień, ledger/outbox, klucze idempotency i kontrolowane nadanie przesyłki po approvalu.
+- [ ] Import księgowy/allegro billing + rzeczywisty VAT i Smart per zamówienie; kontrola uzgodnienia z transakcjami.
+- [ ] Legalne, aktualne źródło danych konkurencji z udokumentowanymi uprawnieniami.
+
+Status: **IMPLEMENTED OFFLINE**, nadal **NOT CONNECTED**, **WRITE BLOCKED**.
+
+[Opis czterech narzędzi i ograniczenia](docs/07-architecture/offline-commerce-audits-2026-10-19.md).

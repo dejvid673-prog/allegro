@@ -1,4 +1,4 @@
-"""Protocol smoke test using the official MCP Python v2 SDK, in-memory client (five offline tools)."""
+"""Protocol smoke test using the official MCP Python v2 SDK, in-memory client (nine offline tools)."""
 import asyncio
 
 from mcp import Client
@@ -15,6 +15,10 @@ async def main() -> None:
             "allegro_get_read_endpoint",
             "allegro_shipment_preflight_offline",
             "allegro_cost_preflight_offline",
+            "allegro_assortment_audit_offline",
+            "allegro_price_change_proposal_offline",
+            "allegro_market_comparison_offline",
+            "allegro_shipment_events_audit_offline",
         }
         assert names == expected, f"unexpected tool exposure: {names}"
         result = await client.call_tool("allegro_catalog_status", {})
@@ -48,7 +52,64 @@ async def main() -> None:
             "allegro_cost_preflight_offline", {"cost_snapshot": zero_cost}
         )
         assert not cost_result.is_error, "offline margin calculation failed"
-    print("MCP in-memory protocol smoke PASS: exactly 5 offline tools (3 catalog, 2 domain)")
+        assortment = await client.call_tool(
+            "allegro_assortment_audit_offline", {
+                "offers": [{
+                    "connection_id": "a", "offer_id": "100", "sku": "chalk",
+                    "gtin": "5901234123457", "stock": 2,
+                    "price_gross": "123.00", "status": "ACTIVE",
+                }],
+                "product_master": [{
+                    "sku": "chalk", "gtin": "5901234123457",
+                    "expected_stock_by_connection": {"a": 2},
+                    "expected_price_by_connection": {"a": "123.00"},
+                }],
+            }
+        )
+        assert not assortment.is_error, "offline assortment tool failed"
+        proposal = await client.call_tool(
+            "allegro_price_change_proposal_offline", {
+                "current_offer": {
+                    "connection_id": "a", "offer_id": "100", "sku": "chalk",
+                    "price_gross": "120.00",
+                },
+                "proposed_price_gross": "123.00",
+                "projected_cost_snapshot": zero_cost,
+            }
+        )
+        assert not proposal.is_error, "offline repricing proposal failed"
+        from datetime import datetime, timezone
+        market = await client.call_tool(
+            "allegro_market_comparison_offline", {
+                "own_offers": [{
+                    "connection_id": "a", "offer_id": "100", "sku": "chalk",
+                    "gtin": "5901234123457", "net_weight_grams": 25000,
+                    "units_per_offer": 1, "condition": "NEW",
+                    "price_gross": "55.00", "shipping_gross": "12.00",
+                }],
+                "competitor_observations": [{
+                    "offer_ref": "export-1", "source_type": "USER_PROVIDED_EXPORT",
+                    "source_ref": "fixture", "observed_at": datetime.now(timezone.utc).isoformat(),
+                    "gtin": "5901234123457", "net_weight_grams": 25000,
+                    "units_per_offer": 1, "condition": "NEW",
+                    "price_gross": "54.00", "shipping_gross": "12.00",
+                }],
+            }
+        )
+        assert not market.is_error, "offline market comparison failed"
+        shipping_audit = await client.call_tool(
+            "allegro_shipment_events_audit_offline", {
+                "shipments": [{
+                    "connection_id": "a", "order_id": "order", "shipment_id": "ship",
+                    "tracking_number": "tracking", "status": "LABEL_CREATED",
+                    "label_created_at": "2026-10-18T10:00:00Z", "first_scan_at": None,
+                    "first_scan_verified": False, "cod_required": False,
+                }],
+                "as_of": "2026-10-19T12:00:00Z",
+            }
+        )
+        assert not shipping_audit.is_error, "offline shipment event audit failed"
+    print("MCP in-memory protocol smoke PASS: exactly 9 offline tools (3 catalog, 6 domain)")
 
 
 if __name__ == "__main__":
