@@ -237,6 +237,25 @@ class ShipmentMonitorTests(unittest.TestCase):
         self.assertNotIn("LABEL_OLDER_THAN_24H_NO_FIRST_SCAN",
                          {f["code"] for f in r["findings"]})
 
+    def test_zero_cod_amount_blocked(self):
+        s = shipment(cod_required=True, cod_amount_gross="0.00",
+                     carrier_cod_amount_gross="0.00")
+        r = audit_shipment_events([s], as_of=self.AS_OF)
+        self.assertEqual(r["status"], "BLOCK")
+        self.assertIn("COD_AMOUNT_ZERO", {f["code"] for f in r["findings"]})
+
+    def test_label_from_future_flagged(self):
+        s = shipment(label_created_at="2026-10-20T12:00:00Z")
+        r = audit_shipment_events([s], as_of=self.AS_OF)
+        self.assertEqual(r["status"], "BLOCK")
+        self.assertIn("LABEL_FROM_FUTURE", {f["code"] for f in r["findings"]})
+
+    def test_created_label_without_timestamp_requires_review(self):
+        s = shipment(label_created_at=None)
+        r = audit_shipment_events([s], as_of=self.AS_OF)
+        self.assertEqual(r["status"], "REVIEW")
+        self.assertIn("MISSING_LABEL_TIMESTAMP", {f["code"] for f in r["findings"]})
+
     def test_bad_timestamp_fails_closed(self):
         with self.assertRaises(ValueError):
             audit_shipment_events([shipment()], as_of="2026-10-19")
