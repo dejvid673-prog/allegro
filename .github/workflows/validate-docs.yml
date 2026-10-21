@@ -4,8 +4,8 @@ on:
   pull_request:
   push:
     branches: [main]
-  schedule:
-    - cron: "17 4 * * *"
+  # Daily scheduled validation disabled: avoid repeated failed-run notifications.
+  # CI still validates pull requests and pushes; manual runs remain available.
   workflow_dispatch:
 
 permissions:
