@@ -79,6 +79,25 @@ class AdsProfitSnapshotTests(unittest.TestCase):
         self.assertIsNone(result["metrics"]["acos"])
         self.assertEqual(result["attributed_contribution_after_ads"], "0")
 
+    def test_two_attributed_items_in_one_order_do_not_double_count_orders(self):
+        extra = copy.deepcopy(self.data["order_lines"][0])
+        extra["line_item_id"] = "SYNTHETIC-ADDITIONAL-LINE"
+        extra["quantity"] = 1
+        extra["sale_amount"] = 100
+        self.data["order_lines"].append(extra)
+        self.data["ads_rows"][0]["attributed_revenue"] = 1100
+        result = audit(self.data)
+        self.assertEqual(result["status"], "PASS", result["errors"])
+        self.assertEqual(result["attributed_contribution_before_ads"], "198")
+        self.assertEqual(result["attributed_contribution_after_ads"], "98")
+        self.assertEqual(result["metrics"]["cvr"], "0.05")
+
+    def test_duplicate_row_suppresses_unreliable_kpis(self):
+        self.data["ads_rows"].append(copy.deepcopy(self.data["ads_rows"][0]))
+        result = audit(self.data)
+        self.assertEqual(result["status"], "HOLD_DATA")
+        self.assertIsNone(result["metrics"])
+
     def test_input_bool_and_negative_rejected(self):
         with self.assertRaises(ValueError):
             number(True, "cost")
