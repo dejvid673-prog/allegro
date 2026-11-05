@@ -79,3 +79,8 @@ Allegro Ceny, AlleObniżka i akcje sezonowe mają odrębne zasady wyrównania, c
 `wynik = przychód po obniżce + potwierdzone wyrównanie − pełne koszty − opłaty akcji − wzrost zwrotów`.
 
 Nie zakładaj, że wyrównanie jest gotówką ani że zadziała dla całej liczby sztuk. Zapisz limit, okres i sposób rozliczenia z regulaminu konkretnej kampanii.
+
+
+## Aktualizacja merytoryczna — 2026-11-05
+
+Zobacz [analitykę rentowności, źródła i kontrakt importu](allegro-ads-profit-analytics-2026-11-05.md). Potwierdzono: `lineItems[].allegroAds.attributed` w API zamówień od 2026-10-29, typy Express/Pro, historię zmian od 2026-07-06 oraz przełącznik kwot NET/GROSS. **Nie utożsamiaj** `allegro:api:campaigns` z pełnym API Ads; warunki dostępu określa regulamin Allegro Ads. Minima CPC i stawki z sekcji historycznej wymagają ponownej weryfikacji na dzień decyzji i w konkretnej kategorii. Przypisana sprzedaż nie dowodzi inkrementalności.
