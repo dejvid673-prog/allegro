@@ -835,6 +835,154 @@
       "last_verified": "2026-10-17",
       "status": "planned",
       "notes": "GET /shipment-management/shipments/{shipmentId}: od 29.10.2026 brak listów przewozowych w additionalProperties."
+    },
+    {
+      "id": "ads-order-attribution-2026-10-29",
+      "title": "Allegro Ads attribution in order lineItems",
+      "url": "https://developer.allegro.pl/news/zamowienia-dodalismy-informacje-o-atrybucji-allegro-ads-Pg8glADgbT5",
+      "owner": "Allegro",
+      "kind": "change-notice",
+      "authority": 3,
+      "areas": [
+        "orders",
+        "ads",
+        "attribution"
+      ],
+      "review_cadence": "monthly",
+      "last_verified": "2026-11-05",
+      "status": "active",
+      "notes": "lineItems[].allegroAds.attributed in order GET; no attribution CPA or campaign identifier"
+    },
+    {
+      "id": "ads-regulations-2026",
+      "title": "Allegro Ads regulations",
+      "url": "https://allegro.pl/regulaminy/regulamin-allegro-ads-a1EnOgMxWfa",
+      "owner": "Allegro",
+      "kind": "terms",
+      "authority": 3,
+      "areas": [
+        "ads",
+        "access",
+        "legal"
+      ],
+      "review_cadence": "monthly",
+      "last_verified": "2026-11-05",
+      "status": "active",
+      "notes": "REST Ads limited to technical partners and brand owners/manufacturers"
+    },
+    {
+      "id": "ads-partner-regulations-2026",
+      "title": "Allegro Ads partner regulations 2026-10-08",
+      "url": "https://allegro.pl/regulaminy/regulamin-programu-partnerskiego-allegro-ads-MREKExrWqIb",
+      "owner": "Allegro",
+      "kind": "terms",
+      "authority": 3,
+      "areas": [
+        "ads",
+        "partners",
+        "api"
+      ],
+      "review_cadence": "monthly",
+      "last_verified": "2026-11-05",
+      "status": "active",
+      "notes": "Agency API availability and grandfathered permissions subject to terms"
+    },
+    {
+      "id": "ads-express-pro-2026",
+      "title": "Allegro Ads Express and Pro",
+      "url": "https://help.allegro.com/pl/sell/a/teraz-jeszcze-szybciej-utworzysz-kampanie-w-panelu-allegro-ads-ZMnVlevYyH4",
+      "owner": "Allegro",
+      "kind": "seller-help",
+      "authority": 5,
+      "areas": [
+        "ads",
+        "campaigns"
+      ],
+      "review_cadence": "monthly",
+      "last_verified": "2026-11-05",
+      "status": "active",
+      "notes": "Express automatic bids vs Pro manual control"
+    },
+    {
+      "id": "ads-history-2026",
+      "title": "History of Allegro Ads campaign changes",
+      "url": "https://help.allegro.com/pl/sell/a/jak-dziala-historia-zmian-w-panelu-allegro-ads-LRzDdmKZ7I0",
+      "owner": "Allegro",
+      "kind": "seller-help",
+      "authority": 5,
+      "areas": [
+        "ads",
+        "audit"
+      ],
+      "review_cadence": "monthly",
+      "last_verified": "2026-11-05",
+      "status": "active",
+      "notes": "History from 2026-07-06; 12 months retention"
+    },
+    {
+      "id": "ads-planner-2026",
+      "title": "Allegro Ads campaign planner",
+      "url": "https://help.allegro.com/pl/sell/a/jak-korzystac-z-planera-kampanii-b2lqkB577TE",
+      "owner": "Allegro",
+      "kind": "seller-help",
+      "authority": 5,
+      "areas": [
+        "ads",
+        "seasonality"
+      ],
+      "review_cadence": "monthly",
+      "last_verified": "2026-11-05",
+      "status": "active",
+      "notes": "Keywords, average monthly reach and CPC; 2000 queries per month"
+    },
+    {
+      "id": "ads-net-gross-2026",
+      "title": "Ads NET/GROSS toggle",
+      "url": "https://help.allegro.com/pl/sell/a/wprowadzilismy-zmiany-dla-sprzedajacych-zapowiedziane-na-18-sierpnia-E7n3d4Alecb",
+      "owner": "Allegro",
+      "kind": "change-notice",
+      "authority": 3,
+      "areas": [
+        "ads",
+        "vat",
+        "reporting"
+      ],
+      "review_cadence": "monthly",
+      "last_verified": "2026-11-05",
+      "status": "active",
+      "notes": "Gross/net costs and ROAS may change; sales value unchanged"
+    },
+    {
+      "id": "ads-attribution-lag-2026",
+      "title": "Ads attribution and reporting lag",
+      "url": "https://help.allegro.com/pl/sell/c/optymalizacja-i-rozwoj-w-allegro-ads",
+      "owner": "Allegro",
+      "kind": "seller-help",
+      "authority": 5,
+      "areas": [
+        "ads",
+        "kpi"
+      ],
+      "review_cadence": "monthly",
+      "last_verified": "2026-11-05",
+      "status": "active",
+      "notes": "7-day click attribution; sales reported with delay"
+    },
+    {
+      "id": "ads-ai-summary-2026",
+      "title": "Allegro Ads AI summary",
+      "url": "https://help.allegro.com/pl/sell/a/nowosc-w-panelu-allegro-ads-znajdziesz-podsumowanie-i-analize-twoich-kampanii-ofert-sponsorowanych-9g3w3qvj3im",
+      "owner": "Allegro",
+      "kind": "seller-help",
+      "authority": 5,
+      "areas": [
+        "ads",
+        "reporting"
+      ],
+      "review_cadence": "monthly",
+      "last_verified": "2026-11-05",
+      "status": "active",
+      "notes": "New 2026-07-29; not replacement for per-SKU profit model"
     }
   ]
 }
