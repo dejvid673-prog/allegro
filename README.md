@@ -124,3 +124,8 @@ Instrukcja, formaty danych i ograniczenia: [Offline commerce audits](docs/07-arc
 - eksportów danych kupujących ani pełnych payloadów produkcyjnych;
 - danych logowania do Allegro, PrestaShop, BaseLinkera lub przewoźników;
 - zgody na samodzielne publikowanie, kończenie ofert, zmianę cen lub nadawanie przesyłek.
+
+
+## Aktualizacja Allegro Ads — 2026-11-05
+
+Nowe źródła i metodyka: [Analityka rentowności Allegro Ads](docs/08-operations/allegro-ads-profit-analytics-2026-11-05.md). Dokument obejmuje: zmiany API atrybucji z 29.10.2026, ograniczenia Ads API, manifest importu XLSX, statusy kosztów, ACoS/ROAS/CVR/CPA, progi break-even, VAT i SOP z ręcznym zatwierdzeniem. **Stan RESEARCHED/DESIGNED, nie TESTED ani CONNECTED.** Nie odświeżono pełnego generowanego Swaggera — wymaga uruchomienia istniejącego generatora i przeglądu diffu.
