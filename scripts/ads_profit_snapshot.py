@@ -37,6 +37,8 @@ def ratio(numerator: Decimal, denominator: Decimal) -> str | None:
 
 
 def audit(payload: dict) -> dict:
+    if not isinstance(payload, dict):
+        raise ValueError("audit input must be a JSON object")
     errors: list[str] = []
     notes: list[str] = []
     manifest = payload.get("manifest")
@@ -71,7 +73,7 @@ def audit(payload: dict) -> dict:
     # Financial conclusions require all required metrics, and cannot
     # estimate missing values as 0.
     metrics = None
-    if not any(s.startswith("ads_rows[") for s in errors):
+    if not any("ads_rows[" in s or "duplicate source grain" in s for s in errors):
         metrics = {
             "ctr": ratio(totals["clicks"], totals["impressions"]),
             "avg_cpc": ratio(totals["spend"], totals["clicks"]),
@@ -102,7 +104,7 @@ def audit(payload: dict) -> dict:
         seen_line_ids: set[tuple[str, str]] = set()
         revenue = Decimal("0")
         cost_sum = Decimal("0")
-        attributed_count = 0
+        attributed_order_ids: set[str] = set()
         for i, line in enumerate(order_lines):
             if not isinstance(line, dict):
                 errors.append(f"invalid order line: {i}")
@@ -116,7 +118,7 @@ def audit(payload: dict) -> dict:
                 continue
             if line.get("ads_attributed") is not True:
                 continue
-            attributed_count += 1
+            attributed_order_ids.add(str(line.get("order_id")))
             try:
                 quantity = number(line.get("quantity"), "order quantity")
                 sale_amount = number(line.get("sale_amount"), "line sale amount")
@@ -140,6 +142,9 @@ def audit(payload: dict) -> dict:
                 continue
             by_type: dict[str, dict] = {}
             for item in items:
+                if not isinstance(item, dict):
+                    errors.append("cost item is not an object")
+                    continue
                 category = item.get("type")
                 if category in by_type:
                     errors.append(f"duplicate cost type: {category}")
@@ -170,8 +175,8 @@ def audit(payload: dict) -> dict:
                     cost_sum += number(item.get("value"), f"cost {cat}") * quantity
                 except ValueError as exc:
                     errors.append(str(exc))
-        if attributed_count != totals["attributed_orders"]:
-            errors.append("order-line count does not reconcile to attributed_orders (one line/order assumption)")
+        if len(attributed_order_ids) != totals["attributed_orders"]:
+            errors.append("unique attributed order count does not reconcile with Ads report")
         if revenue != totals["attributed_revenue"]:
             errors.append("attributed order-line revenue does not reconcile with Ads report")
         if not errors:
