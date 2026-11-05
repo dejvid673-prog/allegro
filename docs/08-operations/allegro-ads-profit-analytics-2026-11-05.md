@@ -41,7 +41,7 @@ Pole `attributed:true` to dowód atrybucji danej pozycji, **nie** koszt kliknię
 - W razie wielu kont identyfikator konta to wymiar pierwszorzędny. Nie sumuj rynków lub walut bez jawnych zasad przeliczenia.
 
 ### Obsługa VAT i podatków
-- Dla STAW EXPERT według ostatniego przekazanego stanu: firma nie jest czynnym podatnikiem VAT (stan wymaga potwierdzenia na dzień analizowanej transakcji). Koszt brutto zakupów/usług pozostaje kosztem ekonomicznym, jeżeli VAT nie podlega odliczeniu. Nie zmieniaj go automatycznie na netto po kliknięciu przełącznika w Allegro Ads.
+- Status podatnika VAT STAW EXPERT nie został niezależnie zweryfikowany na dzień transakcji i musi być ustalony z księgowością. Koszt brutto zakupów/usług pozostaje kosztem ekonomicznym w zakresie, w jakim VAT nie podlega odliczeniu. Nie przeliczaj go automatycznie na netto po kliknięciu przełącznika w Allegro Ads.
 - VAT i podatek dochodowy to inne strumienie rozliczeń. Zysk przed podatkiem dochodowym, gotówka po opłatach oraz marża kontrybucyjna są różnymi wynikami. Nie odejmuj arbitralnie ryczałtu od zysku.
 - Prowizje, koszt dostawy, Smart, dopłaty, opakowanie, materiał, robocizna, straty i zwroty muszą mieć źródło; `UNKNOWN` blokuje stwierdzenie „rentowne”.
 
