@@ -1,0 +1,376 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "7DEJV Allegro Ads offline audit import — normalized source contract",
+  "description": "Import template, not an Allegro native API schema. Missing values are null; costs require explicit evidence and status. Original sensitive exports are not committed.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "manifest",
+    "ads_rows",
+    "costs"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "import_id",
+        "account_id",
+        "marketplace_id",
+        "period_start",
+        "period_end",
+        "retrieved_at",
+        "currency",
+        "monetary_basis",
+        "source_type",
+        "source_fingerprint",
+        "attribution_maturity",
+        "grain"
+      ],
+      "properties": {
+        "import_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "account_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "marketplace_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "period_start": {
+          "type": "string",
+          "format": "date"
+        },
+        "period_end": {
+          "type": "string",
+          "format": "date"
+        },
+        "retrieved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "currency": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 3
+        },
+        "monetary_basis": {
+          "enum": [
+            "GROSS",
+            "NET"
+          ]
+        },
+        "source_type": {
+          "enum": [
+            "ADS_XLSX",
+            "ORDER_GET",
+            "MERGED_OFFLINE"
+          ]
+        },
+        "source_fingerprint": {
+          "type": "string",
+          "minLength": 1
+        },
+        "attribution_maturity": {
+          "enum": [
+            "OPEN_7D_WINDOW",
+            "MATURE",
+            "UNKNOWN"
+          ]
+        },
+        "grain": {
+          "type": "string",
+          "minLength": 1
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "ads_rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "date",
+          "campaign_id",
+          "group_id",
+          "offer_id",
+          "placement",
+          "impressions",
+          "clicks",
+          "spend",
+          "attributed_revenue",
+          "attributed_orders"
+        ],
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "campaign_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "group_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "offer_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "placement": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "impressions": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "clicks": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "spend": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "attributed_revenue": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "attributed_orders": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "source_row_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "costs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "sku",
+          "offer_id",
+          "cost_items"
+        ],
+        "properties": {
+          "sku": {
+            "type": "string",
+            "minLength": 1
+          },
+          "offer_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "cost_items": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "type",
+                "status",
+                "basis",
+                "evidence"
+              ],
+              "properties": {
+                "type": {
+                  "enum": [
+                    "purchase",
+                    "production",
+                    "inbound_freight",
+                    "commission",
+                    "fixed_fees",
+                    "shipping",
+                    "smart",
+                    "surcharges",
+                    "packaging",
+                    "labor",
+                    "returns_reserve",
+                    "payment",
+                    "promotion",
+                    "other"
+                  ]
+                },
+                "status": {
+                  "enum": [
+                    "KNOWN",
+                    "ZERO_CONFIRMED",
+                    "NOT_APPLICABLE",
+                    "UNKNOWN"
+                  ]
+                },
+                "basis": {
+                  "enum": [
+                    "GROSS",
+                    "NET"
+                  ]
+                },
+                "value": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "evidence": {
+                  "type": "string"
+                },
+                "per": {
+                  "enum": [
+                    "unit",
+                    "order",
+                    "parcel",
+                    "period"
+                  ]
+                }
+              },
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "status": {
+                        "const": "KNOWN"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": [
+                      "value"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "status": {
+                        "const": "UNKNOWN"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "value": {
+                        "type": "null"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "status": {
+                        "const": "ZERO_CONFIRMED"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "value": {
+                        "const": 0
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "order_lines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "order_id",
+          "line_item_id",
+          "offer_id",
+          "sku",
+          "quantity",
+          "sale_amount",
+          "ads_attributed"
+        ],
+        "properties": {
+          "order_id": {
+            "type": "string"
+          },
+          "line_item_id": {
+            "type": "string"
+          },
+          "offer_id": {
+            "type": "string"
+          },
+          "sku": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "sale_amount": {
+            "type": "number",
+            "minimum": 0
+          },
+          "ads_attributed": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "purchase_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "refund_amount": {
+            "type": "number",
+            "minimum": 0
+          }
+        }
+      }
+    }
+  }
+}

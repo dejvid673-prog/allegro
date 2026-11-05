@@ -27,3 +27,15 @@ Codziennie pobieraj hash Swaggera, news i changelog. Po zmianie:
 5. po przeglądzie zaktualizuj rejestr źródeł i daty weryfikacji.
 
 Zmiany pomocy handlowej (Smart, prowizje, limity, Ads) wymagają osobnego radaru, bo nie muszą zmieniać Swaggera.
+
+
+## Potwierdzone aktualizacje Allegro Ads — przegląd 2026-11-05
+
+| Data | Status | Zmiana | Działanie |
+| --- | --- | --- | --- |
+| 2026-07-06 | VERIFIED 2026-11-05 | początek zbierania historii zmian kampanii Ads (retencja 12 miesięcy) | uwzględnić zmiany ręczne i systemowe w audycie |
+| 2026-08-18 | VERIFIED 2026-11-05 | przełącznik widoku NET/GROSS w Ads, wartość sprzedaży bez zmiany | jawnie zapisywać podstawę przychodu i kosztu |
+| 2026-10 | VERIFIED 2026-11-05 | tryby Express i Pro | nie zakładać ręcznego sterowania CPC w Express |
+| 2026-10-29 | VERIFIED 2026-11-05 | `lineItems[].allegroAds.attributed` w GET checkout-forms | sprawdzić parser; nie wyciągać campaignId z bool |
+
+Szczegóły i URL-e: [Allegro Ads Profit Analytics](../08-operations/allegro-ads-profit-analytics-2026-11-05.md). Nie stanowi dowodu regeneracji Swaggera ani testu API na koncie.

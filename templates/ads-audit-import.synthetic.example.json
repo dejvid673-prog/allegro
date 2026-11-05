@@ -1,0 +1,247 @@
+{
+  "schema_version": "1.0",
+  "manifest": {
+    "import_id": "SYNTHETIC-2026-10-01",
+    "account_id": "SYNTHETIC-ACCOUNT",
+    "marketplace_id": "allegro-pl",
+    "period_start": "2026-10-01",
+    "period_end": "2026-10-01",
+    "retrieved_at": "2026-10-15T12:00:00+02:00",
+    "currency": "PLN",
+    "monetary_basis": "GROSS",
+    "source_type": "MERGED_OFFLINE",
+    "source_fingerprint": "SYNTHETIC-TEST-FIXTURE",
+    "attribution_maturity": "MATURE",
+    "grain": "per date/account/group/offer/placement",
+    "notes": "Synthetic assumption: 10 orders, one unit/order, 100 PLN each. 200 paid clicks; revenue 1000 PLN, spend 100 PLN; non-Ads variable cost 82 PLN/unit. Expected: CTR 2%, CPC PLN 0.50, CVR 5%, ROAS 10x, ACoS 10%, pre-Ads contribution PLN 180, post-Ads contribution PLN 80. Other costs assumed NOT_APPLICABLE only for this synthetic example; not a real business decision. Required cost categories explicitly marked KNOWN or NOT_APPLICABLE for fixture; real data must provide own evidence."
+  },
+  "ads_rows": [
+    {
+      "date": "2026-10-01",
+      "campaign_id": "SYNTHETIC-CAMPAIGN",
+      "group_id": "SYNTHETIC-GROUP",
+      "offer_id": "SYNTHETIC-OFFER-1",
+      "placement": "SYNTHETIC-PLACEMENT",
+      "impressions": 10000,
+      "clicks": 200,
+      "spend": 100,
+      "attributed_revenue": 1000,
+      "attributed_orders": 10,
+      "source_row_id": "SYNTHETIC-ADS-1"
+    }
+  ],
+  "costs": [
+    {
+      "sku": "SYNTHETIC-SKU-1",
+      "offer_id": "SYNTHETIC-OFFER-1",
+      "cost_items": [
+        {
+          "type": "purchase",
+          "status": "KNOWN",
+          "basis": "GROSS",
+          "value": 50,
+          "evidence": "synthetic",
+          "per": "unit"
+        },
+        {
+          "type": "packaging",
+          "status": "KNOWN",
+          "basis": "GROSS",
+          "value": 3,
+          "evidence": "synthetic",
+          "per": "unit"
+        },
+        {
+          "type": "commission",
+          "status": "KNOWN",
+          "basis": "GROSS",
+          "value": 12,
+          "evidence": "synthetic",
+          "per": "unit"
+        },
+        {
+          "type": "shipping",
+          "status": "KNOWN",
+          "basis": "GROSS",
+          "value": 17,
+          "evidence": "synthetic",
+          "per": "unit"
+        },
+        {
+          "type": "production",
+          "status": "NOT_APPLICABLE",
+          "basis": "GROSS",
+          "value": null,
+          "evidence": "SYNTHETIC ONLY - assumed non-applicable; never assume on real SKU",
+          "per": "unit"
+        },
+        {
+          "type": "inbound_freight",
+          "status": "NOT_APPLICABLE",
+          "basis": "GROSS",
+          "value": null,
+          "evidence": "SYNTHETIC ONLY - assumed non-applicable; never assume on real SKU",
+          "per": "unit"
+        },
+        {
+          "type": "fixed_fees",
+          "status": "NOT_APPLICABLE",
+          "basis": "GROSS",
+          "value": null,
+          "evidence": "SYNTHETIC ONLY - assumed non-applicable; never assume on real SKU",
+          "per": "unit"
+        },
+        {
+          "type": "smart",
+          "status": "NOT_APPLICABLE",
+          "basis": "GROSS",
+          "value": null,
+          "evidence": "SYNTHETIC ONLY - assumed non-applicable; never assume on real SKU",
+          "per": "unit"
+        },
+        {
+          "type": "surcharges",
+          "status": "NOT_APPLICABLE",
+          "basis": "GROSS",
+          "value": null,
+          "evidence": "SYNTHETIC ONLY - assumed non-applicable; never assume on real SKU",
+          "per": "unit"
+        },
+        {
+          "type": "labor",
+          "status": "NOT_APPLICABLE",
+          "basis": "GROSS",
+          "value": null,
+          "evidence": "SYNTHETIC ONLY - assumed non-applicable; never assume on real SKU",
+          "per": "unit"
+        },
+        {
+          "type": "returns_reserve",
+          "status": "NOT_APPLICABLE",
+          "basis": "GROSS",
+          "value": null,
+          "evidence": "SYNTHETIC ONLY - assumed non-applicable; never assume on real SKU",
+          "per": "unit"
+        },
+        {
+          "type": "payment",
+          "status": "NOT_APPLICABLE",
+          "basis": "GROSS",
+          "value": null,
+          "evidence": "SYNTHETIC ONLY - assumed non-applicable; never assume on real SKU",
+          "per": "unit"
+        },
+        {
+          "type": "promotion",
+          "status": "NOT_APPLICABLE",
+          "basis": "GROSS",
+          "value": null,
+          "evidence": "SYNTHETIC ONLY - assumed non-applicable; never assume on real SKU",
+          "per": "unit"
+        }
+      ]
+    }
+  ],
+  "order_lines": [
+    {
+      "order_id": "SYNTHETIC-ORDER-001",
+      "line_item_id": "SYNTHETIC-LINE-001",
+      "offer_id": "SYNTHETIC-OFFER-1",
+      "sku": "SYNTHETIC-SKU-1",
+      "quantity": 1,
+      "sale_amount": 100,
+      "ads_attributed": true,
+      "purchase_date": "2026-10-01T12:00:00+02:00"
+    },
+    {
+      "order_id": "SYNTHETIC-ORDER-002",
+      "line_item_id": "SYNTHETIC-LINE-002",
+      "offer_id": "SYNTHETIC-OFFER-1",
+      "sku": "SYNTHETIC-SKU-1",
+      "quantity": 1,
+      "sale_amount": 100,
+      "ads_attributed": true,
+      "purchase_date": "2026-10-01T12:00:00+02:00"
+    },
+    {
+      "order_id": "SYNTHETIC-ORDER-003",
+      "line_item_id": "SYNTHETIC-LINE-003",
+      "offer_id": "SYNTHETIC-OFFER-1",
+      "sku": "SYNTHETIC-SKU-1",
+      "quantity": 1,
+      "sale_amount": 100,
+      "ads_attributed": true,
+      "purchase_date": "2026-10-01T12:00:00+02:00"
+    },
+    {
+      "order_id": "SYNTHETIC-ORDER-004",
+      "line_item_id": "SYNTHETIC-LINE-004",
+      "offer_id": "SYNTHETIC-OFFER-1",
+      "sku": "SYNTHETIC-SKU-1",
+      "quantity": 1,
+      "sale_amount": 100,
+      "ads_attributed": true,
+      "purchase_date": "2026-10-01T12:00:00+02:00"
+    },
+    {
+      "order_id": "SYNTHETIC-ORDER-005",
+      "line_item_id": "SYNTHETIC-LINE-005",
+      "offer_id": "SYNTHETIC-OFFER-1",
+      "sku": "SYNTHETIC-SKU-1",
+      "quantity": 1,
+      "sale_amount": 100,
+      "ads_attributed": true,
+      "purchase_date": "2026-10-01T12:00:00+02:00"
+    },
+    {
+      "order_id": "SYNTHETIC-ORDER-006",
+      "line_item_id": "SYNTHETIC-LINE-006",
+      "offer_id": "SYNTHETIC-OFFER-1",
+      "sku": "SYNTHETIC-SKU-1",
+      "quantity": 1,
+      "sale_amount": 100,
+      "ads_attributed": true,
+      "purchase_date": "2026-10-01T12:00:00+02:00"
+    },
+    {
+      "order_id": "SYNTHETIC-ORDER-007",
+      "line_item_id": "SYNTHETIC-LINE-007",
+      "offer_id": "SYNTHETIC-OFFER-1",
+      "sku": "SYNTHETIC-SKU-1",
+      "quantity": 1,
+      "sale_amount": 100,
+      "ads_attributed": true,
+      "purchase_date": "2026-10-01T12:00:00+02:00"
+    },
+    {
+      "order_id": "SYNTHETIC-ORDER-008",
+      "line_item_id": "SYNTHETIC-LINE-008",
+      "offer_id": "SYNTHETIC-OFFER-1",
+      "sku": "SYNTHETIC-SKU-1",
+      "quantity": 1,
+      "sale_amount": 100,
+      "ads_attributed": true,
+      "purchase_date": "2026-10-01T12:00:00+02:00"
+    },
+    {
+      "order_id": "SYNTHETIC-ORDER-009",
+      "line_item_id": "SYNTHETIC-LINE-009",
+      "offer_id": "SYNTHETIC-OFFER-1",
+      "sku": "SYNTHETIC-SKU-1",
+      "quantity": 1,
+      "sale_amount": 100,
+      "ads_attributed": true,
+      "purchase_date": "2026-10-01T12:00:00+02:00"
+    },
+    {
+      "order_id": "SYNTHETIC-ORDER-010",
+      "line_item_id": "SYNTHETIC-LINE-010",
+      "offer_id": "SYNTHETIC-OFFER-1",
+      "sku": "SYNTHETIC-SKU-1",
+      "quantity": 1,
+      "sale_amount": 100,
+      "ads_attributed": true,
+      "purchase_date": "2026-10-01T12:00:00+02:00"
+    }
+  ]
+}
