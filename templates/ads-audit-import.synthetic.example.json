@@ -13,7 +13,7 @@
     "source_fingerprint": "SYNTHETIC-TEST-FIXTURE",
     "attribution_maturity": "MATURE",
     "grain": "per date/account/group/offer/placement",
-    "notes": "Synthetic assumption: 10 orders, one unit/order, 100 PLN each. 200 paid clicks; revenue 1000 PLN, spend 100 PLN; non-Ads variable cost 82 PLN/unit. Expected: CTR 2%, CPC PLN 0.50, CVR 5%, ROAS 10x, ACoS 10%, pre-Ads contribution PLN 180, post-Ads contribution PLN 80. Other costs assumed NOT_APPLICABLE only for this synthetic example; not a real business decision."
+    "notes": "Synthetic assumption: 10 orders, one unit/order, 100 PLN each. 200 paid clicks; revenue 1000 PLN, spend 100 PLN; non-Ads variable cost 82 PLN/unit. Expected: CTR 2%, CPC PLN 0.50, CVR 5%, ROAS 10x, ACoS 10%, pre-Ads contribution PLN 180, post-Ads contribution PLN 80. Other costs assumed NOT_APPLICABLE only for this synthetic example; not a real business decision. Required cost categories explicitly marked KNOWN or NOT_APPLICABLE for fixture; real data must provide own evidence."
   },
   "ads_rows": [
     {
@@ -65,6 +65,78 @@
           "basis": "GROSS",
           "value": 17,
           "evidence": "synthetic",
+          "per": "unit"
+        },
+        {
+          "type": "production",
+          "status": "NOT_APPLICABLE",
+          "basis": "GROSS",
+          "value": null,
+          "evidence": "SYNTHETIC ONLY - assumed non-applicable; never assume on real SKU",
+          "per": "unit"
+        },
+        {
+          "type": "inbound_freight",
+          "status": "NOT_APPLICABLE",
+          "basis": "GROSS",
+          "value": null,
+          "evidence": "SYNTHETIC ONLY - assumed non-applicable; never assume on real SKU",
+          "per": "unit"
+        },
+        {
+          "type": "fixed_fees",
+          "status": "NOT_APPLICABLE",
+          "basis": "GROSS",
+          "value": null,
+          "evidence": "SYNTHETIC ONLY - assumed non-applicable; never assume on real SKU",
+          "per": "unit"
+        },
+        {
+          "type": "smart",
+          "status": "NOT_APPLICABLE",
+          "basis": "GROSS",
+          "value": null,
+          "evidence": "SYNTHETIC ONLY - assumed non-applicable; never assume on real SKU",
+          "per": "unit"
+        },
+        {
+          "type": "surcharges",
+          "status": "NOT_APPLICABLE",
+          "basis": "GROSS",
+          "value": null,
+          "evidence": "SYNTHETIC ONLY - assumed non-applicable; never assume on real SKU",
+          "per": "unit"
+        },
+        {
+          "type": "labor",
+          "status": "NOT_APPLICABLE",
+          "basis": "GROSS",
+          "value": null,
+          "evidence": "SYNTHETIC ONLY - assumed non-applicable; never assume on real SKU",
+          "per": "unit"
+        },
+        {
+          "type": "returns_reserve",
+          "status": "NOT_APPLICABLE",
+          "basis": "GROSS",
+          "value": null,
+          "evidence": "SYNTHETIC ONLY - assumed non-applicable; never assume on real SKU",
+          "per": "unit"
+        },
+        {
+          "type": "payment",
+          "status": "NOT_APPLICABLE",
+          "basis": "GROSS",
+          "value": null,
+          "evidence": "SYNTHETIC ONLY - assumed non-applicable; never assume on real SKU",
+          "per": "unit"
+        },
+        {
+          "type": "promotion",
+          "status": "NOT_APPLICABLE",
+          "basis": "GROSS",
+          "value": null,
+          "evidence": "SYNTHETIC ONLY - assumed non-applicable; never assume on real SKU",
           "per": "unit"
         }
       ]
