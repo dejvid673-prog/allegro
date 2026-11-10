@@ -8,6 +8,7 @@ Module: allegro_api/read_client.py. This library is framework-neutral; it is not
 
 | Python method | Actual Allegro REST resource | Required declared scope |
 |---|---|---|
+| me | GET /me | allegro:api:profile:read |
 | offers | GET /sale/offers | allegro:api:sale:offers:read |
 | offer | GET /sale/product-offers/{offerId} | allegro:api:sale:offers:read |
 | orders | GET /order/checkout-forms | allegro:api:orders:read |
@@ -33,3 +34,8 @@ Test command: python -m unittest discover -s tests -v. CI workflow includes the 
 Next: build OAuth Device/Authorization Code broker with protected token store; verify seller identity and scopes through approved Sandbox login; test 401/429 and timestamped real GET; add small privacy-safe order/offer projections and authenticated MCP interface; later controlled WzA writing with idempotency and one-operation approval. All business WRITE remains disabled.
 
 Never report CONNECTED/VERIFIED until sandbox account-holder consent and live evidence exist.
+
+## Uzupełnienie 2026-11-10 — projekcje dla agenta
+Zaimplementowano `allegro_api/agent_projection.py` oraz `allegro_api/safe_read_service.py` z testami. Dane zamówień przed prezentacją AI są mapowane na jawną listę dozwolonych pól; pełny checkout form nie jest udostępniany. Domyślnie połączenie nie jest zweryfikowane i wywołanie usługi blokuje się przed pobraniem tokenu. Dokument: [Allegro safe agent read projection](allegro-safe-agent-read-projection-2026-11-10.md).
+
+W tym etapie NIE wdrożono token brokera, identyfikacji sprzedawcy na żywym API ani narzędzi MCP czy realnych zamówień. Nie zmieniono dziewięciu istniejących narzędzi offline.
