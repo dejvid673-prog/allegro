@@ -25,6 +25,7 @@ READ_SCOPES = frozenset((
     "allegro:api:sale:offers:read",
     "allegro:api:orders:read",
     "allegro:api:shipments:read",
+    "allegro:api:profile:read",  # seller identity verification via GET /me
 ))
 MAX_OAUTH_REPLY = 64 * 1024
 MAX_INTERVAL = 300

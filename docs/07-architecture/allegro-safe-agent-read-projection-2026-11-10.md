@@ -39,3 +39,10 @@ Agent 7DEJV analizuje oferty i zamówienia bez przesyłania do modelu surowych c
 - [OAuth / Device flow, scope, token refresh](https://developer.allegro.pl/tutorials/uwierzytelnianie-i-autoryzacja-zlq9e75GdIR)
 - [Allegro API — offers GET](https://developer.allegro.pl/tutorials/jak-zarzadzac-ofertami-7GzB2L37ase)
 - [Allegro REST API / checkoutForms](https://developer.allegro.pl/documentation/)
+
+## Weryfikacja sprzedawcy — rozszerzenie 2026-11-10
+`allegro_api/read_client.py` ma dodatkową, typowaną operację `me(connection_id, authenticated_actor)`, wymagającą `allegro:api:profile:read`. Surowa odpowiedź GET /me **zawiera dane osobowe i firmowe** i jest przeznaczona wyłącznie do sprawdzenia tożsamości wewnątrz zaufanej aplikacji.
+
+`allegro_api/seller_identity.py` zwraca wyłącznie `VerifiedSellerIdentity(connection_id, seller_id, environment)` po porównaniu numeru `id` ze zweryfikowanym wpisem `ConnectionRegistry`. Brak profile:read, niezgodność kont, nieprawidłowy identyfikator i niewłaściwy aktor powodują odmowę, bez ujawnienia adresu e-mail, NIP czy nazwy użytkownika. Dopiero backend może wykorzystać ten wynik do budowy dozwolonego mapowania `verified_sellers` dla `SafeAllegroReadService`.
+
+Zakres `profile:read` dodano do dozwolonych zakresów Device OAuth; **nie uruchomiono logowania ani odczytu na realnym koncie**. Należy potwierdzić faktycznie przyznane scope w autoryzacji użytkownika i wykonać bezpieczny test /me w Sandbox. Źródło: [oficjalna dokumentacja GET /me](https://developer.allegro.pl/tutorials/jak-zarzadzac-kontem-danymi-uzytkownika-ZM9YAKgPgi2).

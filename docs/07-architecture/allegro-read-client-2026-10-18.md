@@ -8,6 +8,7 @@ Module: allegro_api/read_client.py. This library is framework-neutral; it is not
 
 | Python method | Actual Allegro REST resource | Required declared scope |
 |---|---|---|
+| me | GET /me | allegro:api:profile:read |
 | offers | GET /sale/offers | allegro:api:sale:offers:read |
 | offer | GET /sale/product-offers/{offerId} | allegro:api:sale:offers:read |
 | orders | GET /order/checkout-forms | allegro:api:orders:read |

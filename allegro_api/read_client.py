@@ -25,6 +25,7 @@ MEDIA_TYPE = "application/vnd.allegro.public.v1+json"
 SCOPE_OFFERS = "allegro:api:sale:offers:read"
 SCOPE_ORDERS = "allegro:api:orders:read"
 SCOPE_SHIPMENTS = "allegro:api:shipments:read"
+SCOPE_PROFILE = "allegro:api:profile:read"
 MAX_BODY_BYTES = 1024 * 1024
 MAX_LIMIT = 100
 MAX_OFFSET = 1_000_000
@@ -228,6 +229,10 @@ class AllegroReadClient:
         if not isinstance(obj, dict):
             raise ReadApiError(None)
         return obj
+
+    def me(self, connection_id: str, actor_id: str) -> dict:
+        """Read authenticated seller identity (may contain PII). Never expose raw via MCP."""
+        return self._read(connection_id, actor_id, SCOPE_PROFILE, "/me")
 
     def offers(self, connection_id: str, actor_id: str, limit: int = 20, offset: int = 0) -> dict:
         _safe_limit_offset(limit, offset)
